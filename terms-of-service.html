@@ -1,20 +1,399 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Terms of Service — Pythia</title>
+<style>
+  :root {
+    --bg: #0e0a1f;
+    --surface: #1a1530;
+    --text: #e8e6f0;
+    --muted: #9b97b3;
+    --accent: #a855f7;
+    --border: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.65; font-size: 15.5px; }
+  .wrapper { max-width: 820px; margin: 0 auto; padding: 40px 24px 80px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 24px; margin-bottom: 32px; }
+  h1 { font-size: 32px; margin: 0 0 8px; letter-spacing: -0.5px; }
+  .meta { color: var(--muted); font-size: 13.5px; }
+  h2 { font-size: 20px; margin-top: 36px; margin-bottom: 12px; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 12px; }
+  h3 { font-size: 16px; margin-top: 22px; margin-bottom: 8px; color: var(--text); }
+  p, li { color: var(--text); }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px dashed rgba(168,85,247,0.4); }
+  a:hover { border-bottom-style: solid; }
+  .lang-switch { display: flex; gap: 8px; margin-bottom: 24px; }
+  .lang-switch button { background: var(--surface); color: var(--text); border: 1px solid var(--border); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13.5px; }
+  .lang-switch button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .section[hidden] { display: none; }
+  code { background: var(--surface); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+  .callout { background: var(--surface); border-left: 3px solid var(--accent); padding: 12px 16px; border-radius: 6px; margin: 16px 0; font-size: 14.5px; }
+</style>
 </head>
 <body>
-<h1>Terms of Service</h1>
-<p>Last updated: April 25, 2026</p>
-<p>By using the Pythia app, you agree to these terms.</p>
-<h2>Use of Service</h2>
-<p>Pythia provides dream interpretation, tarot, and horoscope content for entertainment purposes only.</p>
-<h2>TikTok Integration</h2>
-<p>By connecting your TikTok account, you authorize Pythia to post content on your behalf using the TikTok Content Posting API.</p>
-<h2>Content</h2>
-<p>All content is AI-generated and intended for entertainment. It should not be used as professional advice.</p>
-<h2>Contact</h2>
-<p>berkayberatsonmez@gmail.com</p>
+<div class="wrapper">
+
+<div class="lang-switch">
+  <button id="btn-en" class="active" onclick="switchLang('en')">English</button>
+  <button id="btn-tr" onclick="switchLang('tr')">Türkçe</button>
+</div>
+
+<!-- ================================================================ -->
+<!-- ENGLISH                                                          -->
+<!-- ================================================================ -->
+<div id="lang-en" class="section">
+
+<header>
+  <h1>Terms of Service</h1>
+  <div class="meta">Pythia — Dream Interpretation, Tarot &amp; Horoscope · Effective: November 1, 2026 · Last updated: November 1, 2026</div>
+</header>
+
+<p>These Terms of Service ("<strong>Terms</strong>") form a binding agreement between you ("<strong>you</strong>", "<strong>user</strong>") and <strong>Berkay Berat Sönmez</strong>, an independent developer based in Türkiye ("<strong>Pythia</strong>", "<strong>we</strong>", "<strong>us</strong>"), governing your use of the Pythia mobile application and any related services (collectively, the "<strong>Service</strong>").</p>
+
+<p>By downloading, installing, accessing, or using the Service, you confirm that you have read, understood, and agree to these Terms and our <a href="privacy-policy.html">Privacy Policy</a>. If you do not agree, do not use the Service.</p>
+
+<h2>1. The Service</h2>
+<p>Pythia is an entertainment application that uses artificial intelligence to provide:</p>
+<ul>
+  <li>Interpretations of dreams the user submits as text</li>
+  <li>Tarot card draws and AI-generated tarot interpretations</li>
+  <li>Daily, weekly, love, and career horoscopes for the 12 zodiac signs</li>
+  <li>A daily personalized "Daily Draw" combining tarot, horoscope, and a daily affirmation</li>
+  <li>Optional features that allow you to share content to TikTok or other platforms</li>
+</ul>
+
+<div class="callout">
+<strong>Entertainment only:</strong> All AI-generated content in Pythia is provided for entertainment purposes. It is not a substitute for professional psychological, medical, financial, legal, or spiritual advice. Do not make important life decisions based on AI output.
+</div>
+
+<h2>2. Eligibility</h2>
+<ul>
+  <li>You must be at least <strong>13 years old</strong> (or the digital-consent age in your country, whichever is higher — 16 in much of the EU/UK).</li>
+  <li>If you are under the legal age of majority in your jurisdiction, you must have permission from a parent or legal guardian.</li>
+  <li>By using the Service you represent that you meet these eligibility requirements.</li>
+</ul>
+
+<h2>3. Your Account</h2>
+<p>Pythia uses anonymous authentication — there is no traditional username or password. Your account is tied to a Firebase Anonymous Auth UID stored on your device. If you reinstall the app or clear app data, your account and history may be lost. You are responsible for backing up your device and for any activity on your device.</p>
+
+<h2>4. License to Use the Service</h2>
+<p>Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to download and use the Service for your personal, non-commercial use. You may not:</p>
+<ul>
+  <li>Reverse engineer, decompile, or disassemble the Service</li>
+  <li>Modify, adapt, translate, or create derivative works without our written consent</li>
+  <li>Resell, sublicense, rent, or lease the Service</li>
+  <li>Bypass technical limitations, paywalls, ad caps, or rate limits</li>
+  <li>Use automated tools (bots, scrapers) to access or interact with the Service in ways that exceed normal use</li>
+</ul>
+
+<h2>5. User Content</h2>
+<p>"User Content" means content you submit to the Service — primarily dream descriptions, tarot questions, mood ratings, and optional birth profile data. You retain ownership of your User Content. By submitting User Content, you grant us a worldwide, royalty-free, non-exclusive license to:</p>
+<ul>
+  <li>Process the content through our AI providers (OpenAI) to generate interpretations</li>
+  <li>Store the content in our database (Firebase) and on your device (SQLite)</li>
+  <li>Display the content back to you within the Service</li>
+</ul>
+<p>This license terminates when you delete the content or your account, except for backup copies in routine system backups (typically 30 days).</p>
+
+<h2>6. Prohibited Uses</h2>
+<p>You agree not to use the Service to:</p>
+<ul>
+  <li>Submit unlawful, harassing, defamatory, or threatening content</li>
+  <li>Submit content that infringes intellectual property, privacy, or other rights of third parties</li>
+  <li>Attempt to extract personal data about other users</li>
+  <li>Distribute malware, viruses, or other harmful code</li>
+  <li>Impersonate another person or misrepresent your affiliation</li>
+  <li>Engage in fraud, including subscription fraud, ad fraud, or chargeback abuse</li>
+  <li>Use the Service to make medical, legal, financial, or other consequential decisions</li>
+  <li>Violate applicable laws or regulations</li>
+</ul>
+<p>We reserve the right to remove content and suspend or terminate accounts that violate these rules.</p>
+
+<h2>7. Subscriptions, Trials, and Payments</h2>
+
+<h3>7.1 Subscription Plans</h3>
+<p>Pythia offers paid subscriptions ("PRO") that unlock features such as unlimited interpretations, premium AI styles, and additional content. Plans, prices, and features are shown in the app and managed via the platform store (Apple App Store / Google Play) and our subscription provider <a href="https://www.revenuecat.com" target="_blank">RevenueCat</a>.</p>
+
+<h3>7.2 Free Trial</h3>
+<p>Some plans may include a free trial. Trial length and conditions are disclosed at the point of purchase. <strong>If you do not cancel before the trial ends, you will be automatically charged the regular subscription price.</strong></p>
+
+<h3>7.3 Auto-Renewal</h3>
+<p>Subscriptions automatically renew at the end of each billing period at the then-current price unless cancelled at least 24 hours before the end of the current period. You can manage and cancel subscriptions at any time:</p>
+<ul>
+  <li><strong>iOS:</strong> Settings → Apple ID → Subscriptions</li>
+  <li><strong>Android:</strong> Google Play Store → Profile → Payments &amp; subscriptions</li>
+</ul>
+
+<h3>7.4 Refunds</h3>
+<p>Refund requests are handled by the platform store you purchased through (Apple or Google). We do not directly process refunds. Statutory consumer-protection rights in your country (including the EU 14-day right of withdrawal where applicable) remain unaffected.</p>
+
+<h3>7.5 Price Changes</h3>
+<p>We may change subscription prices. Material changes will be communicated in advance via the app or store. Price changes take effect for the next billing cycle after notification.</p>
+
+<h3>7.6 Apple App Store Disclosure</h3>
+<p>For purchases on iOS:</p>
+<ul>
+  <li>Payment will be charged to your Apple ID account at confirmation of purchase.</li>
+  <li>Subscriptions automatically renew unless turned off at least 24 hours before the end of the current period.</li>
+  <li>Account will be charged for renewal within 24 hours prior to the end of the current period.</li>
+  <li>Subscriptions can be managed and auto-renewal turned off in your Apple ID account settings.</li>
+  <li>Any unused portion of a free trial period will be forfeited when you purchase a subscription.</li>
+</ul>
+
+<h2>8. Ads &amp; Rewarded Video</h2>
+<p>The free tier of Pythia is supported by advertising (Google AdMob). You may have the option to watch a rewarded video to earn additional credits, subject to a daily cap (currently 3 ads per day). Ads are served by third-party networks subject to their own policies.</p>
+
+<h2>9. TikTok Integration</h2>
+<p>If you choose to connect your TikTok account through the Service:</p>
+<ul>
+  <li>You authorize Pythia to publish content (such as images or videos generated within the Service) to your TikTok account on your behalf, only when you initiate a share action.</li>
+  <li>You remain responsible for all content you publish to TikTok and must comply with TikTok's <a href="https://www.tiktok.com/legal/page/global/terms-of-service/en" target="_blank">Terms of Service</a> and <a href="https://www.tiktok.com/community-guidelines" target="_blank">Community Guidelines</a>.</li>
+  <li>You may revoke access at any time from TikTok's security settings.</li>
+  <li>We are not affiliated with TikTok. TikTok features may change or be removed at any time.</li>
+</ul>
+
+<h2>10. Intellectual Property</h2>
+<p>The Service, including its software, design, logos, brand name "Pythia", and content provided by us, is owned by us or our licensors and is protected by copyright, trademark, and other laws. You receive no rights to our intellectual property except the limited license described in Section 4.</p>
+
+<h2>11. AI Disclaimer</h2>
+<p>Pythia uses third-party AI models (e.g., OpenAI's gpt-4o-mini) to generate interpretations. AI output:</p>
+<ul>
+  <li>May contain inaccuracies, biases, or hallucinations</li>
+  <li>Should not be relied upon for medical, legal, financial, or psychological decisions</li>
+  <li>Is generated for entertainment only</li>
+  <li>May vary in tone, length, and quality</li>
+</ul>
+<p>We do not guarantee the accuracy, completeness, or fitness for any purpose of AI-generated content.</p>
+
+<h2>12. Service Availability &amp; Changes</h2>
+<p>We strive to keep the Service available, but we do not guarantee uninterrupted operation. We may modify, suspend, or discontinue features (including AI providers, third-party integrations, and pricing tiers) at any time, with or without notice. We are not liable to you for any modification, suspension, or discontinuance, except as required by applicable consumer-protection law.</p>
+
+<h2>13. Disclaimer of Warranties</h2>
+<p>To the fullest extent permitted by law, the Service is provided "<strong>AS IS</strong>" and "<strong>AS AVAILABLE</strong>", without warranties of any kind, express or implied, including merchantability, fitness for a particular purpose, non-infringement, accuracy, or availability. We do not warrant that the Service will be error-free, secure, or uninterrupted.</p>
+
+<h2>14. Limitation of Liability</h2>
+<p>To the fullest extent permitted by law:</p>
+<ul>
+  <li>We will not be liable for indirect, incidental, special, consequential, or punitive damages, or any loss of profits, revenue, data, or goodwill, arising out of or in connection with the Service.</li>
+  <li>Our total aggregate liability for all claims arising out of or relating to the Service in any 12-month period is limited to the greater of (a) the amount you paid us in the 12 months preceding the claim, or (b) USD 50.</li>
+</ul>
+<p>Some jurisdictions do not allow the exclusion or limitation of certain damages — in those cases, our liability is limited to the maximum extent permitted.</p>
+
+<h2>15. Indemnification</h2>
+<p>You agree to defend, indemnify, and hold harmless Pythia and its operator from any claims, damages, liabilities, and expenses (including reasonable legal fees) arising from your use of the Service, your User Content, or your violation of these Terms.</p>
+
+<h2>16. Termination</h2>
+<ul>
+  <li>You can stop using the Service and delete the app at any time.</li>
+  <li>We may suspend or terminate your access if you violate these Terms, engage in fraud, or for legal reasons.</li>
+  <li>Upon termination, the licenses granted to you end. Sections that by their nature should survive (e.g., 5, 10, 13, 14, 15, 17) will survive.</li>
+</ul>
+
+<h2>17. Governing Law &amp; Dispute Resolution</h2>
+<p>These Terms are governed by the laws of the <strong>Republic of Türkiye</strong>, without regard to conflict-of-law principles. Disputes will be resolved by the courts and consumer arbitration boards of Türkiye, except where mandatory consumer-protection law in your country of residence applies.</p>
+<p>For users in the European Union, you may also use the European Commission's <a href="https://ec.europa.eu/consumers/odr" target="_blank">Online Dispute Resolution platform</a>.</p>
+
+<h2>18. Changes to These Terms</h2>
+<p>We may update these Terms. Material changes will be announced in-app or via the app store update notes. The "Last updated" date at the top will reflect the most recent revision. Continued use of the Service after changes take effect means you accept the updated Terms.</p>
+
+<h2>19. Contact</h2>
+<ul>
+  <li>Email: <a href="mailto:berkayberatsonmez@gmail.com">berkayberatsonmez@gmail.com</a></li>
+  <li>Subject line: "Terms — Pythia"</li>
+</ul>
+
+<p style="margin-top:48px; padding-top:24px; border-top:1px solid var(--border); color: var(--muted); font-size:13px;">
+This document was last reviewed on November 1, 2026.
+</p>
+
+</div>
+
+<!-- ================================================================ -->
+<!-- TÜRKÇE                                                            -->
+<!-- ================================================================ -->
+<div id="lang-tr" class="section" hidden>
+
+<header>
+  <h1>Hizmet Şartları</h1>
+  <div class="meta">Pythia — Rüya Tabiri, Tarot ve Burç · Yürürlük: 1 Kasım 2026 · Son güncelleme: 1 Kasım 2026</div>
+</header>
+
+<p>Bu Hizmet Şartları ("<strong>Şartlar</strong>"), siz ("<strong>siz</strong>", "<strong>kullanıcı</strong>") ile Türkiye'de faaliyet gösteren bağımsız geliştirici <strong>Berkay Berat Sönmez</strong> ("<strong>Pythia</strong>", "<strong>biz</strong>") arasında bağlayıcı bir sözleşmedir ve Pythia mobil uygulaması ile ilgili hizmetlerin (birlikte "<strong>Hizmet</strong>") kullanımını düzenler.</p>
+
+<p>Hizmet'i indirerek, kurarak veya kullanarak bu Şartlar'ı ve <a href="privacy-policy.html">Gizlilik Politikası</a>'nı okuduğunuzu, anladığınızı ve kabul ettiğinizi onaylarsınız. Kabul etmiyorsanız Hizmet'i kullanmayın.</p>
+
+<h2>1. Hizmet</h2>
+<p>Pythia, yapay zeka kullanarak şunları sunan bir eğlence uygulamasıdır:</p>
+<ul>
+  <li>Kullanıcının metin olarak gönderdiği rüyaların yorumu</li>
+  <li>Tarot kartı çekimi ve AI ile üretilmiş tarot yorumları</li>
+  <li>12 burç için günlük, haftalık, aşk ve kariyer yorumları</li>
+  <li>Tarot, burç ve günlük affirmasyon birleşimi "Günün Çekilişi"</li>
+  <li>TikTok veya başka platformlara içerik paylaşmaya yarayan opsiyonel özellikler</li>
+</ul>
+
+<div class="callout">
+<strong>Yalnızca eğlence amaçlıdır:</strong> Pythia'daki AI içerikleri yalnızca eğlence amaçlıdır. Profesyonel psikolojik, tıbbi, finansal, hukuki veya manevi tavsiyenin yerine geçmez. AI çıktısına dayanarak önemli kararlar almayın.
+</div>
+
+<h2>2. Yaş Şartı</h2>
+<ul>
+  <li>En az <strong>13 yaşında</strong> (bulunduğunuz ülkenin dijital rıza yaşı 16 ise 16 yaş) olmalısınız.</li>
+  <li>Hukuki ergenlik yaşının altındaysanız ebeveyn veya yasal vasi izni almanız gerekir.</li>
+  <li>Hizmet'i kullanarak bu yaş şartlarını karşıladığınızı beyan etmiş olursunuz.</li>
+</ul>
+
+<h2>3. Hesabınız</h2>
+<p>Pythia anonim kimlik doğrulama kullanır — geleneksel kullanıcı adı/şifre yoktur. Hesabınız cihazınızda saklanan Firebase Anonymous Auth UID'sine bağlıdır. Uygulamayı kaldırır veya verileri silerseniz hesabınız ve geçmişiniz kaybolabilir. Cihazınızın yedeğinden ve cihazınızdaki tüm faaliyetten siz sorumlusunuz.</p>
+
+<h2>4. Kullanım Lisansı</h2>
+<p>Bu Şartlar'a uymanız koşuluyla size, Hizmet'i kişisel ve ticari olmayan kullanım için indirme ve kullanma yönünde sınırlı, münhasır olmayan, devredilemez ve geri alınabilir bir lisans veriyoruz. Aşağıdakileri yapmanıza izin verilmez:</p>
+<ul>
+  <li>Hizmet'i tersine mühendislik yapmak, decompile etmek veya çözmek</li>
+  <li>Yazılı iznimiz olmadan değiştirmek, uyarlamak, çevirmek veya türev eser oluşturmak</li>
+  <li>Hizmet'i tekrar satmak, alt lisans vermek, kiralamak</li>
+  <li>Teknik sınırları, paywall'ları, reklam limitlerini veya hız sınırlarını aşmak</li>
+  <li>Otomatik araçlar (bot, scraper) ile normal kullanımı aşan etkileşimde bulunmak</li>
+</ul>
+
+<h2>5. Kullanıcı İçeriği</h2>
+<p>"Kullanıcı İçeriği", Hizmet'e gönderdiğiniz içeriklerdir — başlıca rüya açıklamaları, tarot soruları, mood değerlendirmeleri ve opsiyonel doğum profili. Kullanıcı İçeriği'nin sahipliği sizdedir. Kullanıcı İçeriği gönderirken bize aşağıdaki ücretsiz, dünya çapında, münhasır olmayan lisansı verirsiniz:</p>
+<ul>
+  <li>İçeriği AI sağlayıcılarımız (OpenAI) üzerinden işleyerek yorum üretmek</li>
+  <li>İçeriği veritabanımızda (Firebase) ve cihazınızda (SQLite) saklamak</li>
+  <li>İçeriği Hizmet içinde size geri göstermek</li>
+</ul>
+<p>Bu lisans, içeriği veya hesabınızı sildiğinizde sona erer (rutin sistem yedeklerindeki kopyalar hariç — genelde 30 gün).</p>
+
+<h2>6. Yasaklı Kullanımlar</h2>
+<p>Hizmet'i şunlar için kullanmayı kabul etmezsiniz:</p>
+<ul>
+  <li>Hukuka aykırı, taciz edici, hakaret içeren veya tehditkâr içerik göndermek</li>
+  <li>Üçüncü kişilerin fikri mülkiyet, gizlilik veya diğer haklarını ihlal eden içerik göndermek</li>
+  <li>Diğer kullanıcılar hakkında kişisel veri çıkarmaya çalışmak</li>
+  <li>Zararlı yazılım, virüs veya benzer kod yaymak</li>
+  <li>Başka birinin kimliğine bürünmek</li>
+  <li>Dolandırıcılık (abonelik dolandırıcılığı, reklam dolandırıcılığı, chargeback istismarı dahil)</li>
+  <li>Hizmet'i tıbbi, hukuki, finansal veya benzeri kritik kararlar için kullanmak</li>
+  <li>Yürürlükteki yasaları ihlal etmek</li>
+</ul>
+<p>Bu kuralları ihlal eden içeriği kaldırma ve hesapları askıya alma/sonlandırma hakkımız saklıdır.</p>
+
+<h2>7. Abonelik, Deneme ve Ödeme</h2>
+
+<h3>7.1 Abonelik Planları</h3>
+<p>Pythia, sınırsız yorum, premium AI stilleri ve ek içerik gibi özellikler sunan ücretli abonelikler ("PRO") sunar. Planlar, fiyatlar ve özellikler uygulama içinde gösterilir ve mağaza (Apple App Store / Google Play) ile abonelik sağlayıcımız <a href="https://www.revenuecat.com" target="_blank">RevenueCat</a> üzerinden yönetilir.</p>
+
+<h3>7.2 Ücretsiz Deneme</h3>
+<p>Bazı planlar ücretsiz deneme içerebilir. Deneme süresi ve koşulları satın alma noktasında belirtilir. <strong>Deneme bitmeden iptal etmezseniz otomatik olarak normal abonelik ücretiniz tahsil edilir.</strong></p>
+
+<h3>7.3 Otomatik Yenileme</h3>
+<p>Abonelikler, mevcut dönemin sona ermesinden en az 24 saat önce iptal edilmediği sürece, geçerli fiyat üzerinden her fatura döneminin sonunda otomatik olarak yenilenir. Aboneliğinizi her zaman yönetebilir veya iptal edebilirsiniz:</p>
+<ul>
+  <li><strong>iOS:</strong> Ayarlar → Apple Kimliği → Abonelikler</li>
+  <li><strong>Android:</strong> Google Play Mağazası → Profil → Ödemeler ve abonelikler</li>
+</ul>
+
+<h3>7.4 İade</h3>
+<p>İade talepleri satın aldığınız mağaza (Apple veya Google) tarafından işlenir. İadeleri doğrudan biz işlemiyoruz. Tüketici hukukundan doğan haklarınız (AB'de geçerli olan 14 günlük cayma hakkı dahil) etkilenmez.</p>
+
+<h3>7.5 Fiyat Değişiklikleri</h3>
+<p>Abonelik fiyatlarını değiştirebiliriz. Önemli değişiklikler önceden uygulama veya mağaza üzerinden bildirilir. Fiyat değişiklikleri bildirimden sonraki bir sonraki fatura döneminde yürürlüğe girer.</p>
+
+<h3>7.6 Apple App Store Bilgilendirmesi</h3>
+<p>iOS satın alımları için:</p>
+<ul>
+  <li>Ödeme, satın alma onayı sırasında Apple Kimliği hesabınızdan alınır.</li>
+  <li>Mevcut dönem sona ermeden en az 24 saat önce kapatılmadığı sürece abonelikler otomatik olarak yenilenir.</li>
+  <li>Yenileme ücreti, mevcut dönemin sona ermesinden önceki 24 saat içinde tahsil edilir.</li>
+  <li>Abonelikler Apple Kimliği ayarlarından yönetilebilir ve otomatik yenileme kapatılabilir.</li>
+  <li>Abonelik satın aldığınızda ücretsiz denemenin kullanılmayan süresi geçersiz olur.</li>
+</ul>
+
+<h2>8. Reklam ve Ödüllü Video</h2>
+<p>Pythia'nın ücretsiz katmanı reklamlarla (Google AdMob) desteklenir. Ek kredi kazanmak için ödüllü video izleme seçeneğiniz olabilir; günlük limit (şu an 3 reklam) uygulanır. Reklamlar 3. taraf reklam ağları tarafından kendi politikalarıyla sunulur.</p>
+
+<h2>9. TikTok Entegrasyonu</h2>
+<p>Hizmet üzerinden TikTok hesabınızı bağlamayı seçerseniz:</p>
+<ul>
+  <li>Yalnızca paylaşım eylemini siz başlattığınızda, Pythia'nın oluşturduğu içeriği TikTok hesabınıza adınıza paylaşmasına izin vermiş olursunuz.</li>
+  <li>TikTok'a yayınladığınız tüm içerikten siz sorumlusunuz; TikTok <a href="https://www.tiktok.com/legal/page/global/terms-of-service/tr" target="_blank">Hizmet Şartları</a>'na ve <a href="https://www.tiktok.com/community-guidelines" target="_blank">Topluluk Kuralları</a>'na uymakla yükümlüsünüz.</li>
+  <li>Erişimi her zaman TikTok güvenlik ayarlarından iptal edebilirsiniz.</li>
+  <li>Pythia, TikTok ile ilişkili veya bağlı değildir. TikTok özellikleri her zaman değişebilir veya kaldırılabilir.</li>
+</ul>
+
+<h2>10. Fikri Mülkiyet</h2>
+<p>Hizmet (yazılım, tasarım, logo, "Pythia" markası ve tarafımızdan sağlanan içerik dahil) tarafımıza veya lisans verenlerimize aittir ve telif, marka ve diğer yasalarla korunur. Bölüm 4'teki sınırlı lisans dışında fikri mülkiyetimiz üzerinde herhangi bir hak elde etmezsiniz.</p>
+
+<h2>11. AI Sorumluluk Reddi</h2>
+<p>Pythia, yorumları üretmek için 3. taraf AI modelleri kullanır (örn. OpenAI gpt-4o-mini). AI çıktısı:</p>
+<ul>
+  <li>Yanlışlıklar, önyargılar veya halüsinasyonlar içerebilir</li>
+  <li>Tıbbi, hukuki, finansal veya psikolojik kararlarda dayanılmamalıdır</li>
+  <li>Yalnızca eğlence amaçlıdır</li>
+  <li>Ton, uzunluk ve kalite olarak değişebilir</li>
+</ul>
+<p>AI üretimi içeriğin doğruluğunu, eksiksizliğini veya herhangi bir amaca uygunluğunu garanti etmiyoruz.</p>
+
+<h2>12. Hizmetin Erişilebilirliği ve Değişiklikler</h2>
+<p>Hizmet'i kesintisiz tutmak için çaba sarf ederiz ancak kesintisiz çalışacağını garanti etmiyoruz. Özellikleri (AI sağlayıcılar, 3. taraf entegrasyonları ve fiyatlandırma katmanları dahil) önceden bildirimle veya bildirimsiz olarak değiştirebilir, askıya alabilir veya sonlandırabiliriz. Yürürlükteki tüketici hukuku gerektirmedikçe bu durumdan ötürü size karşı sorumlu değiliz.</p>
+
+<h2>13. Garanti Reddi</h2>
+<p>Yasanın izin verdiği en geniş ölçüde, Hizmet "<strong>OLDUĞU GİBİ</strong>" ve "<strong>MEVCUT OLDUĞU GİBİ</strong>" sunulur; pazarlanabilirlik, belirli bir amaca uygunluk, ihlal etmeme, doğruluk veya erişilebilirlik dahil hiçbir açık veya örtülü garanti vermeyiz. Hizmet'in hatasız, güvenli veya kesintisiz olacağını garanti etmiyoruz.</p>
+
+<h2>14. Sorumluluk Sınırı</h2>
+<p>Yasanın izin verdiği en geniş ölçüde:</p>
+<ul>
+  <li>Dolaylı, arızi, özel, sonuç olarak doğan veya cezai zararlardan; kar, gelir, veri veya itibar kaybından sorumlu değiliz.</li>
+  <li>Hizmet ile ilgili tüm taleplerde 12 aylık dönemde toplam azami sorumluluğumuz şunlardan büyük olanı ile sınırlıdır: (a) talepten önceki 12 ayda bize ödediğiniz tutar veya (b) 50 ABD doları.</li>
+</ul>
+<p>Bazı yargı bölgeleri belirli zararların hariç tutulmasına izin vermez — bu durumda sorumluluğumuz yasaca izin verilen azami ölçüye sınırlanır.</p>
+
+<h2>15. Tazminat</h2>
+<p>Hizmet kullanımınızdan, Kullanıcı İçeriğinizden veya bu Şartlar'ı ihlalinizden doğan tüm talep, zarar, sorumluluk ve makul avukatlık ücretleri dahil giderlere karşı Pythia'yı ve operatörünü savunmayı, tazmin etmeyi ve zararsız kılmayı kabul edersiniz.</p>
+
+<h2>16. Sona Erme</h2>
+<ul>
+  <li>Hizmet'i kullanmayı her zaman bırakabilir, uygulamayı silebilirsiniz.</li>
+  <li>Bu Şartlar'ı ihlal eder, dolandırıcılığa karışır veya yasal nedenler oluşursa erişiminizi askıya alabilir veya sonlandırabiliriz.</li>
+  <li>Sonlanma ile size verilen lisanslar sona erer. Niteliği gereği yürürlükte kalması gereken bölümler (örn. 5, 10, 13, 14, 15, 17) yürürlükte kalır.</li>
+</ul>
+
+<h2>17. Uygulanacak Hukuk ve Uyuşmazlık Çözümü</h2>
+<p>Bu Şartlar, kanunlar ihtilafı kurallarına bakılmaksızın <strong>Türkiye Cumhuriyeti</strong> hukukuna tabidir. Uyuşmazlıklar Türkiye mahkemeleri ve tüketici hakem heyetlerinde çözülür; ikamet ettiğiniz ülkenin emredici tüketici hukuku saklıdır.</p>
+<p>Avrupa Birliği'ndeki kullanıcılar Avrupa Komisyonu'nun <a href="https://ec.europa.eu/consumers/odr" target="_blank">Çevrimiçi Uyuşmazlık Çözüm platformunu</a> da kullanabilir.</p>
+
+<h2>18. Şartlardaki Değişiklikler</h2>
+<p>Bu Şartlar'ı güncelleyebiliriz. Önemli değişiklikler uygulama içinde veya mağaza güncelleme notlarıyla duyurulur. Üst kısımdaki "Son güncelleme" tarihi en son revizyonu gösterir. Değişiklikten sonra hizmeti kullanmaya devam etmek güncel Şartlar'ı kabul ettiğiniz anlamına gelir.</p>
+
+<h2>19. İletişim</h2>
+<ul>
+  <li>E-posta: <a href="mailto:berkayberatsonmez@gmail.com">berkayberatsonmez@gmail.com</a></li>
+  <li>Konu: "Şartlar — Pythia"</li>
+</ul>
+
+<p style="margin-top:48px; padding-top:24px; border-top:1px solid var(--border); color: var(--muted); font-size:13px;">
+Bu belge en son 1 Kasım 2026'da gözden geçirildi.
+</p>
+
+</div>
+
+</div>
+
+<script>
+  function switchLang(lang) {
+    document.getElementById('lang-en').hidden = (lang !== 'en');
+    document.getElementById('lang-tr').hidden = (lang !== 'tr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+    history.replaceState(null, '', '#' + lang);
+  }
+  if (location.hash === '#tr') switchLang('tr');
+</script>
+
 </body>
 </html>

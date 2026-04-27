@@ -1,18 +1,387 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Privacy Policy — Pythia</title>
+<style>
+  :root {
+    --bg: #0e0a1f;
+    --surface: #1a1530;
+    --text: #e8e6f0;
+    --muted: #9b97b3;
+    --accent: #a855f7;
+    --border: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.65;
+    font-size: 15.5px;
+  }
+  .wrapper { max-width: 820px; margin: 0 auto; padding: 40px 24px 80px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 24px; margin-bottom: 32px; }
+  h1 { font-size: 32px; margin: 0 0 8px; letter-spacing: -0.5px; }
+  .meta { color: var(--muted); font-size: 13.5px; }
+  h2 { font-size: 20px; margin-top: 36px; margin-bottom: 12px; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 12px; }
+  h3 { font-size: 16px; margin-top: 22px; margin-bottom: 8px; color: var(--text); }
+  p, li { color: var(--text); }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  th, td { padding: 10px 12px; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th { background: var(--surface); color: var(--accent); }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px dashed rgba(168,85,247,0.4); }
+  a:hover { border-bottom-style: solid; }
+  .lang-switch { display: flex; gap: 8px; margin-bottom: 24px; }
+  .lang-switch button {
+    background: var(--surface); color: var(--text); border: 1px solid var(--border);
+    padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13.5px;
+  }
+  .lang-switch button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .section[hidden] { display: none; }
+  code { background: var(--surface); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+</style>
 </head>
 <body>
-<h1>Privacy Policy</h1>
-<p>Last updated: April 25, 2026</p>
-<p>Pythia ("we") operates the Pythia dream interpretation mobile application. This page informs you of our policies regarding the collection, use, and disclosure of personal data.</p>
-<h2>Data We Collect</h2>
-<p>We collect dream entries, horoscope preferences, and basic account information to provide our services.</p>
-<h2>Third Party Services</h2>
-<p>We use TikTok API to share content. TikTok's privacy policy applies to data shared through their platform.</p>
-<h2>Contact</h2>
-<p>berkayberatsonmez@gmail.com</p>
+<div class="wrapper">
+
+<div class="lang-switch">
+  <button id="btn-en" class="active" onclick="switchLang('en')">English</button>
+  <button id="btn-tr" onclick="switchLang('tr')">Türkçe</button>
+</div>
+
+<!-- ================================================================ -->
+<!-- ENGLISH                                                          -->
+<!-- ================================================================ -->
+<div id="lang-en" class="section">
+
+<header>
+  <h1>Privacy Policy</h1>
+  <div class="meta">Pythia — Dream Interpretation, Tarot &amp; Horoscope · Effective: November 1, 2026 · Last updated: November 1, 2026</div>
+</header>
+
+<p>This Privacy Policy explains how <strong>Pythia</strong> ("we", "our", "us") collects, uses, stores, and shares information when you use the Pythia mobile application and any related services (collectively, the "Service"), including any features that integrate with TikTok. Pythia is operated by <strong>Berkay Berat Sönmez</strong>, an independent developer based in Türkiye.</p>
+
+<p>By using the Service, you agree to the practices described in this Privacy Policy. If you do not agree, please do not use the Service.</p>
+
+<h2>1. Who We Are &amp; How to Contact Us</h2>
+<ul>
+  <li><strong>Operator:</strong> Berkay Berat Sönmez (independent developer)</li>
+  <li><strong>App ID:</strong> com.ruyatabircisi.ai</li>
+  <li><strong>Email for privacy questions:</strong> <a href="mailto:berkayberatsonmez@gmail.com">berkayberatsonmez@gmail.com</a></li>
+  <li><strong>Country of operation:</strong> Türkiye</li>
+</ul>
+
+<h2>2. Information We Collect</h2>
+
+<h3>2.1 Information You Provide</h3>
+<table>
+  <thead><tr><th>Category</th><th>Examples</th><th>Required?</th></tr></thead>
+  <tbody>
+    <tr><td>Birth profile (optional)</td><td>Date of birth, time of birth (optional), city of birth</td><td>Optional</td></tr>
+    <tr><td>Sun sign / zodiac sign</td><td>Calculated automatically from your birth date or selected manually</td><td>Optional</td></tr>
+    <tr><td>Dream entries</td><td>Free-text descriptions of dreams you ask us to interpret</td><td>Required to use the dream feature</td></tr>
+    <tr><td>Tarot questions</td><td>Optional question text you submit with a tarot draw</td><td>Optional</td></tr>
+    <tr><td>Ratings &amp; mood selections</td><td>Feedback on interpretations</td><td>Optional</td></tr>
+  </tbody>
+</table>
+
+<h3>2.2 Information Collected Automatically</h3>
+<table>
+  <thead><tr><th>Category</th><th>Examples</th><th>Purpose</th></tr></thead>
+  <tbody>
+    <tr><td>Anonymous account identifier</td><td>Firebase Anonymous Auth UID</td><td>To attach your data to your device without requiring email/password sign-up</td></tr>
+    <tr><td>Device &amp; technical data</td><td>Device model, OS version, app version, language, timezone, country (coarse), crash logs</td><td>App reliability, analytics, fraud prevention</td></tr>
+    <tr><td>Usage data</td><td>Screens viewed, features used, ad views, paywall interactions</td><td>Product analytics</td></tr>
+    <tr><td>Subscription &amp; purchase status</td><td>Active entitlements, purchase history (via RevenueCat / Apple / Google)</td><td>To unlock PRO features and prevent abuse</td></tr>
+    <tr><td>Advertising identifiers</td><td>Google Advertising ID (Android) / IDFA (iOS) — only if you grant permission</td><td>Personalized ads, attribution measurement</td></tr>
+  </tbody>
+</table>
+
+<h3>2.3 Information from Third-Party Integrations</h3>
+<p>If you choose to connect your TikTok account or interact with content shared to TikTok via Pythia, we may receive limited information from TikTok solely as needed to publish content on your behalf. Specifically:</p>
+<ul>
+  <li><strong>TikTok OAuth access token</strong> — to authorize content posting on your behalf</li>
+  <li><strong>Open ID and basic profile</strong> (display name, avatar) — to confirm authentication</li>
+  <li><strong>Upload status</strong> — to confirm successful publication</li>
+</ul>
+<p>We do <strong>not</strong> read your TikTok feed, follower list, direct messages, or private content. Access is limited to the scopes you approve during the TikTok OAuth flow (e.g., <code>video.upload</code>, <code>video.publish</code>).</p>
+
+<h2>3. How We Use Your Information</h2>
+<ul>
+  <li><strong>To provide the Service</strong> — generate AI interpretations of dreams, tarot draws, and horoscopes; deliver daily personalized content based on your sun sign.</li>
+  <li><strong>To personalize your experience</strong> — show your sun sign, daily horoscope energy, and a one-time AI welcome message based on your birth profile.</li>
+  <li><strong>To manage subscriptions</strong> — verify entitlements via RevenueCat; enforce quotas and free-tier limits.</li>
+  <li><strong>To deliver ads</strong> — show rewarded ads (Google AdMob) when you choose to earn credits, with daily caps.</li>
+  <li><strong>To communicate with you</strong> — send local notifications you have opted into (daily reminders, streak milestones).</li>
+  <li><strong>To improve the Service</strong> — analyze aggregate usage to improve features and reliability.</li>
+  <li><strong>To comply with law</strong> — meet legal obligations and respond to lawful requests.</li>
+  <li><strong>To publish to TikTok on your request</strong> — only when you explicitly initiate a share or post action.</li>
+</ul>
+
+<h2>4. Legal Bases for Processing (GDPR / KVKK)</h2>
+<p>If you are in the European Economic Area, the United Kingdom, or Türkiye, we rely on the following legal bases:</p>
+<ul>
+  <li><strong>Performance of a contract</strong> — to provide the core Service you request.</li>
+  <li><strong>Consent</strong> — for optional features (birth profile, push notifications, personalized ads, TikTok sharing). You can withdraw consent at any time.</li>
+  <li><strong>Legitimate interests</strong> — to maintain security, prevent fraud, and improve the Service, balanced against your rights.</li>
+  <li><strong>Legal obligation</strong> — to comply with applicable laws (e.g., tax and consumer-protection rules).</li>
+</ul>
+
+<h2>5. Third-Party Service Providers</h2>
+<p>We share limited data with the following processors, each subject to their own privacy policies:</p>
+<table>
+  <thead><tr><th>Provider</th><th>Purpose</th><th>Data shared</th><th>Privacy Policy</th></tr></thead>
+  <tbody>
+    <tr><td>Google Firebase (Auth, Firestore, Cloud Functions, Analytics, Cloud Messaging)</td><td>Backend, anonymous auth, database, analytics</td><td>UID, app events, crash logs, content you submit for processing</td><td><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></td></tr>
+    <tr><td>OpenAI (gpt-4o-mini)</td><td>Generate AI interpretations</td><td>Dream text, tarot card name, sun sign, language — sent server-to-server, not retained for training when used via the API</td><td><a href="https://openai.com/policies/privacy-policy" target="_blank">openai.com/policies/privacy-policy</a></td></tr>
+    <tr><td>RevenueCat</td><td>Subscription management</td><td>UID, purchase events, entitlement state</td><td><a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></td></tr>
+    <tr><td>Google AdMob</td><td>Rewarded video ads</td><td>Advertising ID, device info, ad-interaction events</td><td><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></td></tr>
+    <tr><td>TikTok Business SDK</td><td>Marketing attribution &amp; analytics</td><td>App install / launch events, advertising ID, anonymous device data</td><td><a href="https://www.tiktok.com/legal/page/global/privacy-policy/en" target="_blank">tiktok.com/legal/privacy-policy</a></td></tr>
+    <tr><td>TikTok Content Posting API (optional, only if you connect)</td><td>Publish content to your TikTok account</td><td>OAuth token, video file, caption, hashtags</td><td><a href="https://www.tiktok.com/legal/page/global/privacy-policy/en" target="_blank">tiktok.com/legal/privacy-policy</a></td></tr>
+    <tr><td>Apple App Store / Google Play</td><td>App distribution &amp; in-app purchases</td><td>Purchase receipts, anonymized device data</td><td>Apple / Google privacy policies</td></tr>
+  </tbody>
+</table>
+<p>We do not sell your personal data to advertisers or data brokers.</p>
+
+<h2>6. Data Retention</h2>
+<table>
+  <thead><tr><th>Data</th><th>Retention period</th></tr></thead>
+  <tbody>
+    <tr><td>Anonymous account &amp; birth profile</td><td>Until you delete the app and request data deletion, or after 24 months of inactivity</td></tr>
+    <tr><td>Dream entries (Firestore + local SQLite)</td><td>Until you delete them in-app or request account deletion</td></tr>
+    <tr><td>Subscription records</td><td>As long as the subscription is active, plus statutory retention for tax/accounting (typically up to 10 years)</td></tr>
+    <tr><td>Crash &amp; analytics logs</td><td>Up to 26 months (Firebase default)</td></tr>
+    <tr><td>TikTok OAuth tokens</td><td>Until you disconnect or revoke access; tokens auto-expire per TikTok policy</td></tr>
+  </tbody>
+</table>
+
+<h2>7. International Data Transfers</h2>
+<p>Pythia uses cloud services located in the European Union (Firebase region <code>europe-west1</code>) and providers based in the United States and other regions. When we transfer your data outside your country, we rely on safeguards such as Standard Contractual Clauses or equivalent mechanisms required by applicable law.</p>
+
+<h2>8. Data Security</h2>
+<ul>
+  <li>All traffic to our backend uses TLS (HTTPS).</li>
+  <li>Server-side data is stored in Firestore with strict security rules; sensitive fields (credits, premium status) can only be modified by Cloud Functions, never by clients.</li>
+  <li>Local data is stored in SQLite within your device's app sandbox.</li>
+  <li>We do not collect passwords (we use anonymous authentication).</li>
+</ul>
+<p>No system is 100% secure. If we become aware of a breach affecting your data, we will notify affected users in line with applicable law.</p>
+
+<h2>9. Your Rights</h2>
+<p>Depending on your jurisdiction (GDPR, UK GDPR, Türkiye KVKK, California CCPA/CPRA, and other comparable laws), you may have the right to:</p>
+<ul>
+  <li><strong>Access</strong> — request a copy of the personal data we hold about you.</li>
+  <li><strong>Rectification</strong> — correct inaccurate data.</li>
+  <li><strong>Erasure</strong> — request deletion of your data ("right to be forgotten").</li>
+  <li><strong>Restriction</strong> — limit how we process your data.</li>
+  <li><strong>Portability</strong> — receive your data in a machine-readable format.</li>
+  <li><strong>Object</strong> — object to processing based on legitimate interests.</li>
+  <li><strong>Withdraw consent</strong> — at any time for processing based on consent.</li>
+  <li><strong>Disconnect TikTok</strong> — revoke our access from your TikTok security settings at any time.</li>
+  <li><strong>Lodge a complaint</strong> — with your local data-protection authority (e.g., KVKK in Türkiye).</li>
+</ul>
+<p>To exercise these rights, email us at <a href="mailto:berkayberatsonmez@gmail.com">berkayberatsonmez@gmail.com</a>. We will respond within 30 days.</p>
+
+<h2>10. Children's Privacy</h2>
+<p>Pythia is not directed to children under 13 (or under 16 in jurisdictions where that is the digital-consent age). We do not knowingly collect personal data from children. If you believe a child has provided personal data, please contact us so we can delete it.</p>
+
+<h2>11. Cookies &amp; Local Storage</h2>
+<p>The Pythia mobile app does not use browser cookies. We use device-local storage (SharedPreferences, SQLite) and Firebase SDKs to store user preferences, cached data, and offline copies of your dream history.</p>
+
+<h2>12. AI-Generated Content Disclaimer</h2>
+<p>Interpretations, horoscopes, and affirmations in Pythia are generated by AI for entertainment purposes only. They are not medical, psychological, financial, or legal advice. Do not rely on AI output for important decisions.</p>
+
+<h2>13. Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. Material changes will be announced in-app or via the app store update notes. The "Last updated" date at the top will reflect the most recent revision. Continued use of the Service after changes take effect means you accept the updated policy.</p>
+
+<h2>14. Contact</h2>
+<p>Questions, complaints, or data requests:</p>
+<ul>
+  <li>Email: <a href="mailto:berkayberatsonmez@gmail.com">berkayberatsonmez@gmail.com</a></li>
+  <li>Subject line: "Privacy — Pythia"</li>
+</ul>
+
+<p style="margin-top:48px; padding-top:24px; border-top:1px solid var(--border); color: var(--muted); font-size:13px;">
+This document was last reviewed on November 1, 2026.
+</p>
+
+</div>
+
+<!-- ================================================================ -->
+<!-- TÜRKÇE                                                            -->
+<!-- ================================================================ -->
+<div id="lang-tr" class="section" hidden>
+
+<header>
+  <h1>Gizlilik Politikası</h1>
+  <div class="meta">Pythia — Rüya Tabiri, Tarot ve Burç · Yürürlük: 1 Kasım 2026 · Son güncelleme: 1 Kasım 2026</div>
+</header>
+
+<p>Bu Gizlilik Politikası, <strong>Pythia</strong> mobil uygulaması ve ilgili hizmetler (TikTok ile entegre olan özellikler dahil — birlikte "Hizmet") kullanıldığında bilgilerinizin nasıl toplandığını, kullanıldığını, saklandığını ve paylaşıldığını açıklar. Pythia, Türkiye'de faaliyet gösteren bağımsız geliştirici <strong>Berkay Berat Sönmez</strong> tarafından işletilmektedir.</p>
+
+<p>Hizmeti kullanarak bu politikada açıklanan uygulamaları kabul etmiş sayılırsınız. Kabul etmiyorsanız Hizmet'i kullanmayın.</p>
+
+<h2>1. Veri Sorumlusu &amp; İletişim</h2>
+<ul>
+  <li><strong>Veri sorumlusu:</strong> Berkay Berat Sönmez (bağımsız geliştirici)</li>
+  <li><strong>Uygulama kimliği:</strong> com.ruyatabircisi.ai</li>
+  <li><strong>İletişim:</strong> <a href="mailto:berkayberatsonmez@gmail.com">berkayberatsonmez@gmail.com</a></li>
+  <li><strong>Faaliyet ülkesi:</strong> Türkiye</li>
+</ul>
+
+<h2>2. Topladığımız Bilgiler</h2>
+
+<h3>2.1 Sizin Sağladığınız Bilgiler</h3>
+<table>
+  <thead><tr><th>Kategori</th><th>Örnekler</th><th>Zorunlu mu?</th></tr></thead>
+  <tbody>
+    <tr><td>Doğum profili (opsiyonel)</td><td>Doğum tarihi, doğum saati (opsiyonel), doğum yeri</td><td>Opsiyonel</td></tr>
+    <tr><td>Güneş burcu</td><td>Doğum tarihinden otomatik hesaplanır veya elle seçilir</td><td>Opsiyonel</td></tr>
+    <tr><td>Rüya kayıtları</td><td>Yorumlatmak istediğiniz serbest metin rüya açıklamaları</td><td>Rüya özelliği için zorunlu</td></tr>
+    <tr><td>Tarot soruları</td><td>Tarot çekimiyle birlikte gönderdiğiniz opsiyonel soru</td><td>Opsiyonel</td></tr>
+    <tr><td>Puan ve mood seçimleri</td><td>Yorumlara verdiğiniz geri bildirim</td><td>Opsiyonel</td></tr>
+  </tbody>
+</table>
+
+<h3>2.2 Otomatik Toplanan Bilgiler</h3>
+<table>
+  <thead><tr><th>Kategori</th><th>Örnekler</th><th>Amaç</th></tr></thead>
+  <tbody>
+    <tr><td>Anonim hesap kimliği</td><td>Firebase Anonymous Auth UID</td><td>E-posta/şifre kayıt gerektirmeden verilerinizi cihazınıza bağlamak</td></tr>
+    <tr><td>Cihaz ve teknik veri</td><td>Cihaz modeli, işletim sistemi, uygulama sürümü, dil, saat dilimi, ülke (kaba), çökme kayıtları</td><td>Uygulama güvenilirliği, analitik, dolandırıcılık önleme</td></tr>
+    <tr><td>Kullanım verisi</td><td>Görüntülenen ekranlar, kullanılan özellikler, reklam izleme, paywall etkileşimleri</td><td>Ürün analitiği</td></tr>
+    <tr><td>Abonelik durumu</td><td>Aktif yetkilendirmeler, satın alma geçmişi (RevenueCat / Apple / Google üzerinden)</td><td>PRO özelliklerini açmak ve kötüye kullanımı önlemek</td></tr>
+    <tr><td>Reklam tanımlayıcıları</td><td>Google Advertising ID (Android) / IDFA (iOS) — yalnızca izin verirseniz</td><td>Kişiselleştirilmiş reklam ve atıf ölçümü</td></tr>
+  </tbody>
+</table>
+
+<h3>2.3 TikTok Entegrasyonundan Gelen Bilgiler</h3>
+<p>TikTok hesabınızı bağlamayı veya Pythia üzerinden TikTok'a paylaşım yapmayı seçerseniz, yalnızca paylaşım için gerekli kısıtlı bilgiyi alırız:</p>
+<ul>
+  <li><strong>TikTok OAuth erişim token'ı</strong> — adınıza içerik paylaşmak için</li>
+  <li><strong>Açık kimlik (Open ID) ve temel profil</strong> (görünen ad, avatar) — kimlik doğrulamayı onaylamak için</li>
+  <li><strong>Yükleme durumu</strong> — başarılı paylaşımı doğrulamak için</li>
+</ul>
+<p>TikTok akışınızı, takipçi listenizi, doğrudan mesajlarınızı veya özel içeriğinizi <strong>okumayız</strong>. Erişim, OAuth sırasında onayladığınız izinlerle (örn. <code>video.upload</code>, <code>video.publish</code>) sınırlıdır.</p>
+
+<h2>3. Bilgileri Nasıl Kullanırız</h2>
+<ul>
+  <li><strong>Hizmeti sunmak için</strong> — rüya, tarot ve burç AI yorumları üretmek; güneş burcuna göre günlük kişisel içerik sağlamak.</li>
+  <li><strong>Deneyimi kişiselleştirmek için</strong> — burcunuzu, günün enerjisini ve doğum profili tabanlı tek seferlik AI karşılama metnini göstermek.</li>
+  <li><strong>Abonelikleri yönetmek için</strong> — RevenueCat üzerinden yetkilendirmeleri doğrulamak; ücretsiz katman limitlerini uygulamak.</li>
+  <li><strong>Reklam göstermek için</strong> — kredi kazanmayı tercih ettiğinizde günlük limitle ödüllü reklamlar (Google AdMob).</li>
+  <li><strong>Sizinle iletişim kurmak için</strong> — onay verdiğiniz yerel bildirimler (günlük hatırlatmalar, streak başarıları).</li>
+  <li><strong>Hizmeti iyileştirmek için</strong> — toplu kullanımı analiz ederek özellik ve güvenilirliği geliştirmek.</li>
+  <li><strong>Yasalara uymak için</strong> — yasal yükümlülükleri yerine getirmek ve hukuki taleplere yanıt vermek.</li>
+  <li><strong>İstek üzerine TikTok'a paylaşmak için</strong> — yalnızca siz açıkça paylaşım/post eylemini başlattığınızda.</li>
+</ul>
+
+<h2>4. İşleme Hukuki Dayanakları (KVKK / GDPR)</h2>
+<p>Türkiye, AB veya Birleşik Krallık'taysanız aşağıdaki hukuki dayanakları kullanırız:</p>
+<ul>
+  <li><strong>Sözleşmenin ifası</strong> — talep ettiğiniz çekirdek hizmeti sunmak (KVKK m.5/2-c).</li>
+  <li><strong>Açık rıza</strong> — opsiyonel özellikler için (doğum profili, push bildirimi, kişisel reklam, TikTok paylaşımı). Rızanızı istediğiniz zaman geri çekebilirsiniz.</li>
+  <li><strong>Meşru menfaat</strong> — güvenlik, dolandırıcılık önleme ve hizmet iyileştirmesi için (haklarınız ile dengelenir).</li>
+  <li><strong>Yasal yükümlülük</strong> — ilgili mevzuata uyum (vergi ve tüketici hukuku gibi).</li>
+</ul>
+
+<h2>5. Üçüncü Taraf Hizmet Sağlayıcılar</h2>
+<p>Aşağıdaki hizmetlerle kısıtlı veri paylaşırız; her biri kendi gizlilik politikasına tabidir:</p>
+<table>
+  <thead><tr><th>Sağlayıcı</th><th>Amaç</th><th>Paylaşılan veri</th></tr></thead>
+  <tbody>
+    <tr><td>Google Firebase</td><td>Backend, anonim auth, veritabanı, analitik, push</td><td>UID, uygulama olayları, çökme kayıtları, işlenmek üzere gönderdiğiniz içerik</td></tr>
+    <tr><td>OpenAI (gpt-4o-mini)</td><td>AI yorum üretimi</td><td>Rüya metni, tarot kart adı, güneş burcu, dil — sunucudan sunucuya gönderilir, eğitim için saklanmaz</td></tr>
+    <tr><td>RevenueCat</td><td>Abonelik yönetimi</td><td>UID, satın alma olayları, yetkilendirme durumu</td></tr>
+    <tr><td>Google AdMob</td><td>Ödüllü video reklamlar</td><td>Reklam ID'si, cihaz bilgisi, reklam etkileşimi</td></tr>
+    <tr><td>TikTok Business SDK</td><td>Pazarlama atıfı &amp; analitik</td><td>Uygulama açılış/kurulum olayları, reklam ID'si, anonim cihaz verisi</td></tr>
+    <tr><td>TikTok Content Posting API (opsiyonel)</td><td>Hesabınıza içerik paylaşmak</td><td>OAuth token, video dosyası, başlık, etiketler</td></tr>
+    <tr><td>Apple App Store / Google Play</td><td>Uygulama dağıtımı &amp; uygulama içi satın alma</td><td>Satın alma makbuzu, anonim cihaz verisi</td></tr>
+  </tbody>
+</table>
+<p>Kişisel verinizi reklamcılara veya veri komisyoncularına satmıyoruz.</p>
+
+<h2>6. Saklama Süreleri</h2>
+<table>
+  <thead><tr><th>Veri</th><th>Saklama süresi</th></tr></thead>
+  <tbody>
+    <tr><td>Anonim hesap ve doğum profili</td><td>Uygulamayı silip silme talebinde bulunana kadar veya 24 ay hareketsizlik sonrası</td></tr>
+    <tr><td>Rüya kayıtları (Firestore + yerel SQLite)</td><td>Uygulamada silene veya hesap silme talebine kadar</td></tr>
+    <tr><td>Abonelik kayıtları</td><td>Abonelik aktif olduğu sürece + vergi/muhasebe için yasal saklama (genelde 10 yıla kadar)</td></tr>
+    <tr><td>Çökme ve analitik kayıtları</td><td>Firebase varsayılanı: 26 aya kadar</td></tr>
+    <tr><td>TikTok OAuth token'ları</td><td>Bağlantıyı kesene veya erişimi iptal edene kadar; TikTok politikasına göre otomatik süre dolar</td></tr>
+  </tbody>
+</table>
+
+<h2>7. Uluslararası Veri Aktarımı</h2>
+<p>Pythia, AB'de bulunan bulut hizmetleri (Firebase region <code>europe-west1</code>) ve ABD ile diğer bölgelerdeki sağlayıcıları kullanır. Verinizi ülke dışına aktarırken Standart Sözleşme Hükümleri (SCC) veya yürürlükteki yasanın gerektirdiği eşdeğer önlemlere dayanırız.</p>
+
+<h2>8. Veri Güvenliği</h2>
+<ul>
+  <li>Backend trafiğinin tamamı TLS (HTTPS) ile şifrelidir.</li>
+  <li>Sunucu tarafı veriler katı Firestore güvenlik kurallarıyla korunur; hassas alanlar (kredi, premium durum) yalnızca Cloud Functions tarafından değiştirilebilir.</li>
+  <li>Yerel veriler cihazınızın uygulama sandbox'ında SQLite olarak saklanır.</li>
+  <li>Şifre toplamıyoruz (anonim kimlik doğrulama kullanıyoruz).</li>
+</ul>
+<p>Hiçbir sistem %100 güvenli değildir. Veri ihlali olursa yürürlükteki yasaya göre etkilenen kullanıcıları bilgilendiririz.</p>
+
+<h2>9. Haklarınız</h2>
+<p>KVKK madde 11, GDPR ve eşdeğer yasalar kapsamında şu haklara sahip olabilirsiniz:</p>
+<ul>
+  <li><strong>Bilgi alma</strong> — verilerinizin işlenip işlenmediğini öğrenme.</li>
+  <li><strong>Erişim</strong> — verilerinize erişim isteme.</li>
+  <li><strong>Düzeltme</strong> — yanlış verilerin düzeltilmesini isteme.</li>
+  <li><strong>Silme / unutulma hakkı</strong> — verilerinizin silinmesini isteme.</li>
+  <li><strong>İşlemeyi sınırlandırma</strong> — işleme faaliyetlerini sınırlama.</li>
+  <li><strong>Taşınabilirlik</strong> — verilerinizi makine okunabilir biçimde alma.</li>
+  <li><strong>İtiraz</strong> — meşru menfaate dayalı işlemeye itiraz.</li>
+  <li><strong>Rızanızı geri çekme</strong> — açık rızaya dayalı işlemeler için her an.</li>
+  <li><strong>TikTok bağlantısını kesme</strong> — TikTok güvenlik ayarlarından erişimi iptal edebilirsiniz.</li>
+  <li><strong>Şikayet</strong> — KVKK Kuruluna başvurma hakkı.</li>
+</ul>
+<p>Haklarınızı kullanmak için <a href="mailto:berkayberatsonmez@gmail.com">berkayberatsonmez@gmail.com</a> adresine yazın. 30 gün içinde dönüş yaparız.</p>
+
+<h2>10. Çocukların Gizliliği</h2>
+<p>Pythia 13 yaş altı (dijital rıza yaşı 16 olan ülkelerde 16 yaş altı) çocuklara yönelik değildir. Bilerek çocuklardan kişisel veri toplamayız. Bir çocuğun veri sağladığını düşünüyorsanız bize bildirin, sileriz.</p>
+
+<h2>11. Çerezler ve Yerel Depolama</h2>
+<p>Pythia mobil uygulaması tarayıcı çerezi kullanmaz. Tercihler, önbellek ve rüya geçmişinin çevrimdışı kopyaları için cihaz-yerel depolama (SharedPreferences, SQLite) ve Firebase SDK'larını kullanırız.</p>
+
+<h2>12. AI İçerik Uyarısı</h2>
+<p>Pythia'daki yorumlar, burçlar ve affirmasyonlar yapay zeka tarafından yalnızca eğlence amacıyla üretilir. Tıbbi, psikolojik, finansal veya hukuki tavsiye değildir. Önemli kararlarda AI çıktısına güvenmeyin.</p>
+
+<h2>13. Politikadaki Değişiklikler</h2>
+<p>Bu politikayı zaman zaman güncelleyebiliriz. Önemli değişiklikler uygulama içinde veya mağaza güncelleme notlarıyla duyurulur. Üst kısımdaki "Son güncelleme" tarihi en son revizyonu yansıtır. Değişiklikten sonra hizmeti kullanmaya devam etmek güncel politikayı kabul ettiğiniz anlamına gelir.</p>
+
+<h2>14. İletişim</h2>
+<ul>
+  <li>E-posta: <a href="mailto:berkayberatsonmez@gmail.com">berkayberatsonmez@gmail.com</a></li>
+  <li>Konu: "Gizlilik — Pythia"</li>
+</ul>
+
+<p style="margin-top:48px; padding-top:24px; border-top:1px solid var(--border); color: var(--muted); font-size:13px;">
+Bu belge en son 1 Kasım 2026'da gözden geçirildi.
+</p>
+
+</div>
+
+</div>
+
+<script>
+  function switchLang(lang) {
+    document.getElementById('lang-en').hidden = (lang !== 'en');
+    document.getElementById('lang-tr').hidden = (lang !== 'tr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+    history.replaceState(null, '', '#' + lang);
+  }
+  if (location.hash === '#tr') switchLang('tr');
+</script>
+
 </body>
 </html>

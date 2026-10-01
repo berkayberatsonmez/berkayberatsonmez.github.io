@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gizlilik Politikası · Privacy Policy — FİTİL / FUSE</title>
+<meta name="description" content="FİTİL (FUSE) gizlilik politikası: hesap yok, reklam yok, analitik yok; günlük tahta için sunucuya giden veriler, saklama süreleri ve Verilerimi sil. Privacy policy in Turkish and English." />
+<link rel="icon" type="image/png" sizes="32x32" href="/fitil-icon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/fitil-icon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/fitil-icon-180.png" />
+<style>
+  :root {
+    --bg: #0c0c10; --card: #15151b; --ink: #e8e8ee; --muted: #9a9aa8; --line: #24242d;
+    --orange: #e0672e; --fuse: #a89544; --fuse-dim: #6a6144; --spark: #f7dc5c;
+    --barrel: #8e3b1c; --barrel-hi: #b04d25; --band: #45190c; --wall: #3b3f4a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink); background: var(--bg);
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 24px 20px 64px; }
+
+  /* fitil şeridi (marka öğesi): kıvılcım, fitil, varil */
+  .fuse { display: flex; gap: 6px; justify-content: center; align-items: center; margin: 8px 0 22px; }
+  .cell { width: 28px; height: 28px; border-radius: 6px; background: #1c1c24; position: relative; }
+  .cell.f::after { content: ""; position: absolute; left: 0; right: 0; top: 12px; height: 4px;
+    background: var(--fuse); border-radius: 2px; }
+  .cell.f.lit::after { background: var(--orange); box-shadow: 0 0 8px rgba(255,158,44,0.6); }
+  .cell.s::after { content: "✦"; position: absolute; inset: 0; display: flex; align-items: center;
+    justify-content: center; color: var(--spark); font-size: 18px; text-shadow: 0 0 8px rgba(247,220,92,0.7); }
+  .cell.w { background: var(--wall); }
+  .cell.b { background: linear-gradient(90deg, var(--barrel-hi) 0 30%, var(--barrel) 30%); border-radius: 9px; }
+  .cell.b::after { content: ""; position: absolute; left: 0; right: 0; top: 8px; height: 3px; background: var(--band);
+    box-shadow: 0 9px 0 var(--band); }
+
+  header.top { text-align: center; margin-bottom: 6px; }
+  header.top h1 { font-size: 1.9rem; letter-spacing: -0.5px; }
+  header.top .sub { color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
+  .lang { text-align: center; margin-top: 10px; font-size: 0.95rem; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 26px 28px; margin-top: 22px;
+  }
+  .card > h2:first-child { margin-top: 0; }
+  h2 { font-size: 1.2rem; margin: 22px 0 10px; padding-top: 4px; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 6px 0 14px 22px; }
+  li { margin-bottom: 7px; }
+  a { color: #f08a52; text-decoration: none; font-weight: 600; }
+  a:hover { text-decoration: underline; }
+  .intro { color: var(--muted); }
+  .table { overflow-x: auto; margin: 8px 0 14px; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.93rem; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 600; }
+  .contact { background: #1b1b22; border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .btn { display: inline-block; padding: 12px 20px; border-radius: 10px; font-weight: 700;
+    border: 1px solid var(--line); background: #1b1b22; color: var(--ink); }
+  .btn.mail { background: var(--orange); border-color: var(--orange); color: var(--bg); }
+  .store-note { margin-top: 14px; padding: 12px 16px; border-radius: 10px; background: #1b1b22;
+    border: 1px dashed #3a3a46; color: var(--muted); font-size: 0.95rem; }
+  .feat li { list-style: none; position: relative; padding-left: 4px; }
+  .feat { margin-left: 18px; }
+  .feat li::before { content: ""; position: absolute; left: -18px; top: 12px; width: 10px; height: 4px;
+    border-radius: 2px; background: var(--orange); }
+  hr.sep { border: 0; border-top: 1px solid var(--line); margin: 40px 0 8px; }
+  footer { text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 28px; }
+  footer a { color: var(--muted); }
+  .dot { margin: 0 8px; opacity: 0.5; }
+  @media (max-width: 480px){ .card { padding: 20px 18px; } header.top h1 { font-size: 1.6rem; } }
+  /* Dar ekranda tablo satırları alt alta: her hücre kendi başlığıyla. */
+  @media (max-width: 560px){
+    thead { display: none; }
+    table, tbody, tr, td { display: block; width: 100%; }
+    tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
+    td { border: 0; padding: 4px 0; }
+    td::before { content: attr(data-label); display: block; color: var(--muted); font-size: 0.82rem; font-weight: 600; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="fuse" aria-hidden="true">
+      <span class="cell s"></span><span class="cell f lit"></span><span class="cell f lit"></span>
+      <span class="cell f"></span><span class="cell f"></span><span class="cell b"></span>
+      <span class="cell w"></span><span class="cell b"></span>
+    </div>
+    <section id="tr" lang="tr">
+    <header class="top">
+      <img src="/fitil-icon-180.png" alt="FİTİL" width="56" height="56"
+           style="border-radius:13px;display:block;margin:0 auto 10px" />
+      <h1>Gizlilik Politikası</h1>
+      <div class="sub">Son güncelleme: 1 Ekim 2026</div>
+      <div class="lang"><a href="#en">English</a></div>
+    </header>
+    <div class="card">
+      <p>FİTİL bir bulmaca oyunudur. Hesap açmazsınız; ad, e-posta, telefon numarası ya da konum istemeyiz. Bu politika hangi verinin nereye gittiğini anlatır.</p>
+      <h2>Veri sorumlusu</h2>
+      <p>Berkay Berat Sönmez (BBS Labs), Türkiye · İletişim: <a href="mailto:contactbbslabs@gmail.com">contactbbslabs@gmail.com</a></p>
+      <h2>Cihazınızda kalanlar</h2>
+      <ul><li><b>Oyun ilerlemesi ve ayarlar:</b> hangi tahtaları oynadığınız, seriniz, dil ve bildirim tercihiniz. Yalnız cihazınızda durur.</li><li><b>Bildirimler:</b> hatırlatmalar cihazınızda planlanır; bunun için bir sunucu kullanılmaz.</li></ul>
+      <h2>Sunucumuza gidenler (yalnız günlük tahta)</h2>
+      <p>Günlük tahtayı oynadığınızda uygulama sunucumuza (Cloudflare Workers ve D1 veritabanı) şunları gönderir:</p>
+      <div class="table"><table><thead><tr><th>Veri</th><th>Neden</th><th>Ne kadar süre</th></tr></thead><tbody><tr><td data-label="Veri"><b>Oyuncu kaydı:</b> cihazınızda üretilen rastgele bir kimlik (adınıza, cihazınıza ya da reklam kimliğine bağlı değildir), kaydın açıldığı an ve son oynadığınız gün</td><td data-label="Neden">Günlük haklarınızı ve skorunuzu size ait tutmak</td><td data-label="Ne kadar süre">Son etkinliğinizden sonra 12 ay</td></tr><tr><td data-label="Veri"><b>Denemeleriniz:</b> fitilleri koyduğunuz kareler (yerleşim), skor, tam temizlik, zaman damgaları</td><td data-label="Neden">Skoru sunucuda doğrulamak, süreyi ölçmek, tabloları kurmak</td><td data-label="Ne kadar süre">90 gün</td></tr><tr><td data-label="Veri"><b>Günlük sonuçlar:</b> en iyi skor, süre, kohort, 30 günlük ortalama, günün birincileri</td><td data-label="Neden">Tablolar, kohortlar, genel tablo ve tekrar izleme</td><td data-label="Ne kadar süre">90 gün</td></tr></tbody></table></div>
+      <p>Süreler dolunca veriler her gün çalışan otomatik bir temizlikle silinir. <b>Verilerimi sil</b> ile (aşağıda) beklemeden, hemen silinir.</p>
+      <p>Oyuncu kimliğiniz hiçbir yanıtta başkalarına gösterilmez. Tablolarda kimliğinizden tek yönlü türetilmiş bir <b>herkese açık kod</b> ve ondan üretilen otomatik bir ad ("Sabırlı Kıvılcım 42") görünür; bu koddan kimliğinize geri gidilemez.</p>
+      <p><b>Herkese açık olanlar:</b> otomatik adınız, günlük skorunuz ve süreniz tablolarda; kohortunuzun ya da günün birincisiyseniz, o günün en iyi yerleşiminiz gün kapandıktan sonra "tekrar izleme" ekranında diğer oyunculara gösterilir.</p>
+      <p><b>IP adresi:</b> isteklerin kötüye kullanımını sınırlamak için Cloudflare'ın hız sınırlaması IP adresinizi anlık olarak kullanır. Biz IP adresinizi veritabanımızda saklamayız. Cloudflare bir hizmet sağlayıcı olarak isteklerinizi işler (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare gizlilik politikası</a>).</p>
+      <p><b>Yurt dışına aktarım:</b> sunucumuz Cloudflare'da çalışır ve Cloudflare'ın sunucuları Türkiye dışında bulunabilir; yukarıdaki veriler bu yüzden yurt dışına aktarılır. Aktarım, günlük tahta hizmetini sunmak için gereklidir ve Cloudflare'ın müşterilerine sunduğu veri işleme sözleşmesi (Data Processing Addendum) ile onun içerdiği standart sözleşme hükümleri çerçevesinde yapılır. Aktarılan veri adınızı, e-postanızı ya da cihaz kimliğinizi içermez: rastgele bir kimlik ve oyun verisidir.</p>
+      <h2>Analitik ve hata raporları</h2>
+      <p>Uygulamada üçüncü taraf analitik, hata raporlama ya da reklam kütüphanesi yoktur. Oyuncuların ertesi gün ve bir hafta sonra geri dönüp dönmediğini yukarıdaki sunucu verisinden, toplu sayılar olarak ölçeriz; bunun için ek veri toplanmaz.</p>
+      <p>Çökme ve performans bilgisini yalnız Google Play Console'un kendi raporlarından görürüz (Android vitals). Bu veriyi Google, cihazınızda kullanım ve teşhis verisi paylaşımı açıksa, kendi politikasıyla toplar ve bize toplu olarak gösterir.</p>
+      <h2>Paylaşım</h2>
+      <p>PAYLAŞ düğmesi cihazınızın paylaşım menüsünü açar. Paylaşılan metin gün numarası, skor, yüzdelik ve seri içerir; yerleşim içermez. Metni kiminle paylaşacağınızı siz seçersiniz.</p>
+      <h2>Geri bildirim</h2>
+      <p>Ana sayfada <b>Ayarlar</b> (sağ üstteki ikon) → <b>Geri bildirim gönder</b> e-posta uygulamanızı açar. Konu satırında uygulamanın sürümü ve günün numarası yazılıdır; oyuncu kimliğiniz yazılmaz. Gönderdiğiniz e-postayı yalnız cevaplamak ve oyunu düzeltmek için kullanırız; e-posta adresiniz oyun verisiyle birleştirilmez.</p>
+      <h2>Reklam, satın alma, çocuklar</h2>
+      <p>Uygulamada reklam ve uygulama içi satın alma yoktur. Uygulama 13 yaş ve üstü için tasarlanmıştır; 13 yaş altı çocuklara yönelik değildir.</p>
+      <h2>Haklarınız ve silme</h2>
+      <p><b>Uygulamanın içinden:</b> ana sayfada <b>Ayarlar</b> (sağ üstteki ikon) → <b>Verilerimi sil</b>. Onayladığınızda:</p>
+      <ul><li>sunucudaki oyuncu kaydınız ve bütün denemeleriniz hemen silinir;</li><li>adınız tablolardan ve tekrar izlemeden kalkar; birinci olduğunuz günlerin birincisi kalan oyunculardan yeniden belirlenir;</li><li>cihazınız yeni bir kimlik alır ve bundan sonra yeni bir oyuncu olarak görünür;</li><li>aynı ekranda isterseniz cihazdaki ilerlemeyi (arşiv, seri) de silersiniz; istemezseniz kalır.</li></ul>
+      <p>Geçmiş günlerin dağılımı (kaç oyuncunun hangi skoru aldığını gösteren, kimlik taşımayan sayılar) değişmez. Silme için sunucuya bağlantı gerekir; bağlantı yoksa hiçbir şey silinmez ve uygulama bunu söyler.</p>
+      <p><b>Uygulamayı kaldırdıysanız:</b> kaldırmak cihazdaki verileri ve oyuncu kimliğinizi siler; sunucudaki veriler yukarıdaki sürelerle kendiliğinden silinir. Daha önce silinmesini isterseniz <a href="mailto:contactbbslabs@gmail.com">contactbbslabs@gmail.com</a> adresine yazın ve ana sayfanın üstünde görmüş olduğunuz adı ("Sen: …") belirtin.</p>
+      <p><b>Haklarınız:</b> 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) madde 11 ve, Avrupa Birliği'ndeyseniz, GDPR kapsamında verilerinizin işlenip işlenmediğini öğrenme, bilgi ve kopya isteme, düzeltme, silme, işlemeye itiraz etme ve kısıtlama isteme haklarınız vardır. Başvurunuzu <a href="mailto:contactbbslabs@gmail.com">contactbbslabs@gmail.com</a> adresine yazın; en geç 30 gün içinde ücretsiz cevaplarız. Hesap olmadığı için sizi ancak uygulamada gördüğünüz adla ("Sen: …") bulabiliriz. Cevabımızdan memnun kalmazsanız Kişisel Verileri Koruma Kurulu'na (kvkk.gov.tr) ya da bulunduğunuz ülkenin veri koruma otoritesine şikâyette bulunabilirsiniz.</p>
+      <h2>Değişiklikler</h2>
+      <p>Bu politika değişirse güncel sürüm bu sayfada yayımlanır ve tarih güncellenir.</p>
+      <div class="contact">
+        <b>İletişim</b><br />
+        Berkay Berat Sönmez (BBS Labs)<br />
+        <a href="mailto:contactbbslabs@gmail.com">contactbbslabs@gmail.com</a>
+      </div>
+    </div>
+    </section>
+    <hr class="sep" />
+    <section id="en" lang="en">
+    <header class="top">
+      <img src="/fitil-icon-180.png" alt="FİTİL" width="56" height="56"
+           style="border-radius:13px;display:block;margin:0 auto 10px" />
+      <h1>Privacy Policy</h1>
+      <div class="sub">Last updated: 1 October 2026</div>
+      <div class="lang"><a href="#tr">Türkçe</a></div>
+    </header>
+    <div class="card">
+      <p>FUSE is a puzzle game. There is no account; we do not ask for your name, email, phone number or location. This policy explains which data goes where.</p>
+      <h2>Data controller</h2>
+      <p>Berkay Berat Sönmez (BBS Labs), Türkiye · Contact: <a href="mailto:contactbbslabs@gmail.com">contactbbslabs@gmail.com</a></p>
+      <h2>What stays on your device</h2>
+      <ul><li><b>Game progress and settings:</b> which boards you played, your streak, language and notification preferences. Stored only on your device.</li><li><b>Notifications:</b> reminders are scheduled on your device; no server is involved.</li></ul>
+      <h2>What goes to our server (daily board only)</h2>
+      <p>When you play the daily board, the app sends the following to our server (Cloudflare Workers and the D1 database):</p>
+      <div class="table"><table><thead><tr><th>Data</th><th>Why</th><th>Retention</th></tr></thead><tbody><tr><td data-label="Data"><b>Player record:</b> a random ID generated on your device (not tied to your name, device or advertising ID), when the record was created and the last day you played</td><td data-label="Why">Keep your daily tries and score yours</td><td data-label="Retention">12 months after your last activity</td></tr><tr><td data-label="Data"><b>Your attempts:</b> the cells where you placed fuses (layout), score, full clear, timestamps</td><td data-label="Why">Verify the score on the server, measure time, build the rankings</td><td data-label="Retention">90 days</td></tr><tr><td data-label="Data"><b>Daily results:</b> best score, time, group, 30-day average, the day's winners</td><td data-label="Why">Rankings, groups, the overall ranking and replays</td><td data-label="Retention">90 days</td></tr></tbody></table></div>
+      <p>When a period ends, the data is deleted by an automatic cleanup that runs every day. With <b>Delete my data</b> (below) it is deleted right away, without waiting.</p>
+      <p>Your player ID is never shown to others in any response. Rankings show a <b>public code</b> derived one-way from your ID and an automatic name made from it ("Patient Spark 42"); the code cannot be turned back into your ID.</p>
+      <p><b>What is public:</b> your automatic name, daily score and time appear in the rankings. If you are first in your group or first of the day, your best layout of that day is shown to other players in the "replay" screen after the day closes.</p>
+      <p><b>IP address:</b> Cloudflare's rate limiting uses your IP address transiently to limit abuse. We do not store your IP address in our database. Cloudflare processes your requests as a service provider (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare privacy policy</a>).</p>
+      <p><b>International transfer:</b> our server runs on Cloudflare, whose servers may be located outside your country, so the data above is transferred abroad. The transfer is necessary to provide the daily board and takes place under the Data Processing Addendum that Cloudflare offers its customers and the standard contractual clauses it incorporates. The transferred data does not include your name, email or device identifiers: it is a random ID and game data.</p>
+      <h2>Analytics and crash reports</h2>
+      <p>The app contains no third-party analytics, crash reporting or advertising library. We measure whether players come back the next day and a week later from the server data above, as aggregate counts; no extra data is collected for this.</p>
+      <p>We see crash and performance information only in Google Play Console's own reports (Android vitals). Google collects this data under its own policy if usage and diagnostics sharing is turned on on your device, and shows it to us in aggregate.</p>
+      <h2>Sharing</h2>
+      <p>The SHARE button opens your device's share menu. The shared text contains the day number, score, percentile and streak; it contains no layout. You choose whom to share it with.</p>
+      <h2>Feedback</h2>
+      <p>On the home screen, <b>Settings</b> (the icon at the top right) → <b>Send feedback</b> opens your email app. The subject line contains the app version and the day number; your player ID is not included. We use the email you send only to reply and to improve the game; your email address is not combined with game data.</p>
+      <h2>Ads, purchases, children</h2>
+      <p>The app has no ads and no in-app purchases. The app is designed for ages 13 and up; it is not directed at children under 13.</p>
+      <h2>Your rights and deletion</h2>
+      <p><b>From inside the app:</b> on the home screen, <b>Settings</b> (the icon at the top right) → <b>Delete my data</b>. When you confirm:</p>
+      <ul><li>your player record and all your attempts are deleted from the server right away;</li><li>your name disappears from the rankings and replays; on days you won, the winner is chosen again from the remaining players;</li><li>your device gets a new ID and appears as a new player from then on;</li><li>on the same screen you can also delete the progress on your device (archive, streak); otherwise it stays.</li></ul>
+      <p>The distribution of past days (counts of how many players reached which score, carrying no ID) does not change. Deletion needs a connection to the server; without one nothing is deleted and the app tells you so.</p>
+      <p><b>If you uninstalled the app:</b> uninstalling deletes the data on your device and your player ID; the server data is deleted on its own after the periods above. To have it deleted sooner, write to <a href="mailto:contactbbslabs@gmail.com">contactbbslabs@gmail.com</a> and include the name you saw at the top of the home screen ("You: …").</p>
+      <p><b>Your rights:</b> under the GDPR (if you are in the European Union) and Turkey's Personal Data Protection Law No. 6698 (KVKK), you have the right to know whether your data is processed, to access and receive a copy of it, and to have it corrected or deleted, as well as to object to or restrict its processing. Send your request to <a href="mailto:contactbbslabs@gmail.com">contactbbslabs@gmail.com</a>; we reply free of charge within 30 days. Since there are no accounts, we can only find you by the name shown in the app ("You: …"). If you are not satisfied with our reply, you can complain to the data protection authority of your country or to Turkey's Personal Data Protection Authority (kvkk.gov.tr).</p>
+      <h2>Changes</h2>
+      <p>If this policy changes, the current version is published on this page and the date is updated.</p>
+      <div class="contact">
+        <b>Contact</b><br />
+        Berkay Berat Sönmez (BBS Labs)<br />
+        <a href="mailto:contactbbslabs@gmail.com">contactbbslabs@gmail.com</a>
+      </div>
+    </div>
+    </section>
+    <footer>
+      © 2026 Berkay Berat Sönmez (BBS Labs)
+      <span class="dot">·</span> <a href="fitil.html">FİTİL / FUSE</a>
+      <span class="dot">·</span> <a href="fitil-privacy.html">Gizlilik · Privacy</a>
+      <span class="dot">·</span> <a href="fitil-terms.html">Koşullar · Terms</a>
+    </footer>
+  </div>
+</body>
+</html>

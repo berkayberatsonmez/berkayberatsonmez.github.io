@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kullanım Koşulları · Terms of Use — FİTİL / FUSE</title>
+<meta name="description" content="FİTİL (FUSE) kullanım koşulları. Terms of Use in Turkish and English." />
+<link rel="icon" type="image/png" sizes="32x32" href="/fitil-icon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/fitil-icon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/fitil-icon-180.png" />
+<style>
+  :root {
+    --bg: #0c0c10; --card: #15151b; --ink: #e8e8ee; --muted: #9a9aa8; --line: #24242d;
+    --orange: #e0672e; --fuse: #a89544; --fuse-dim: #6a6144; --spark: #f7dc5c;
+    --barrel: #8e3b1c; --barrel-hi: #b04d25; --band: #45190c; --wall: #3b3f4a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink); background: var(--bg);
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 24px 20px 64px; }
+
+  /* fitil şeridi (marka öğesi): kıvılcım, fitil, varil */
+  .fuse { display: flex; gap: 6px; justify-content: center; align-items: center; margin: 8px 0 22px; }
+  .cell { width: 28px; height: 28px; border-radius: 6px; background: #1c1c24; position: relative; }
+  .cell.f::after { content: ""; position: absolute; left: 0; right: 0; top: 12px; height: 4px;
+    background: var(--fuse); border-radius: 2px; }
+  .cell.f.lit::after { background: var(--orange); box-shadow: 0 0 8px rgba(255,158,44,0.6); }
+  .cell.s::after { content: "✦"; position: absolute; inset: 0; display: flex; align-items: center;
+    justify-content: center; color: var(--spark); font-size: 18px; text-shadow: 0 0 8px rgba(247,220,92,0.7); }
+  .cell.w { background: var(--wall); }
+  .cell.b { background: linear-gradient(90deg, var(--barrel-hi) 0 30%, var(--barrel) 30%); border-radius: 9px; }
+  .cell.b::after { content: ""; position: absolute; left: 0; right: 0; top: 8px; height: 3px; background: var(--band);
+    box-shadow: 0 9px 0 var(--band); }
+
+  header.top { text-align: center; margin-bottom: 6px; }
+  header.top h1 { font-size: 1.9rem; letter-spacing: -0.5px; }
+  header.top .sub { color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
+  .lang { text-align: center; margin-top: 10px; font-size: 0.95rem; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 26px 28px; margin-top: 22px;
+  }
+  .card > h2:first-child { margin-top: 0; }
+  h2 { font-size: 1.2rem; margin: 22px 0 10px; padding-top: 4px; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 6px 0 14px 22px; }
+  li { margin-bottom: 7px; }
+  a { color: #f08a52; text-decoration: none; font-weight: 600; }
+  a:hover { text-decoration: underline; }
+  .intro { color: var(--muted); }
+  .table { overflow-x: auto; margin: 8px 0 14px; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.93rem; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 600; }
+  .contact { background: #1b1b22; border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .btn { display: inline-block; padding: 12px 20px; border-radius: 10px; font-weight: 700;
+    border: 1px solid var(--line); background: #1b1b22; color: var(--ink); }
+  .btn.mail { background: var(--orange); border-color: var(--orange); color: var(--bg); }
+  .store-note { margin-top: 14px; padding: 12px 16px; border-radius: 10px; background: #1b1b22;
+    border: 1px dashed #3a3a46; color: var(--muted); font-size: 0.95rem; }
+  .feat li { list-style: none; position: relative; padding-left: 4px; }
+  .feat { margin-left: 18px; }
+  .feat li::before { content: ""; position: absolute; left: -18px; top: 12px; width: 10px; height: 4px;
+    border-radius: 2px; background: var(--orange); }
+  hr.sep { border: 0; border-top: 1px solid var(--line); margin: 40px 0 8px; }
+  footer { text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 28px; }
+  footer a { color: var(--muted); }
+  .dot { margin: 0 8px; opacity: 0.5; }
+  @media (max-width: 480px){ .card { padding: 20px 18px; } header.top h1 { font-size: 1.6rem; } }
+  /* Dar ekranda tablo satırları alt alta: her hücre kendi başlığıyla. */
+  @media (max-width: 560px){
+    thead { display: none; }
+    table, tbody, tr, td { display: block; width: 100%; }
+    tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
+    td { border: 0; padding: 4px 0; }
+    td::before { content: attr(data-label); display: block; color: var(--muted); font-size: 0.82rem; font-weight: 600; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="fuse" aria-hidden="true">
+      <span class="cell s"></span><span class="cell f lit"></span><span class="cell f lit"></span>
+      <span class="cell f"></span><span class="cell f"></span><span class="cell b"></span>
+      <span class="cell w"></span><span class="cell b"></span>
+    </div>
+    <section id="tr" lang="tr">
+    <header class="top">
+      <img src="/fitil-icon-180.png" alt="FİTİL" width="56" height="56"
+           style="border-radius:13px;display:block;margin:0 auto 10px" />
+      <h1>Kullanım Koşulları</h1>
+      <div class="sub">Son güncelleme: 1 Ekim 2026</div>
+      <div class="lang"><a href="#en">English</a></div>
+    </header>
+    <div class="card">
+      <ol><li><b>Hizmet.</b> FİTİL, Berkay Berat Sönmez (BBS Labs) tarafından sunulan ücretsiz bir bulmaca oyunudur. Günlük tahta ve tablolar internet bağlantısı ister; arşiv tahtaları çevrimdışı oynanır.</li><li><b>Adil oyun.</b> Günlük tahtada skor ve süre sunucuda hesaplanır. Sunucuyu kötüye kullanmak, otomatik araçlarla gönderim yapmak ya da sistemi yanıltmaya çalışmak yasaktır; bu durumda sonuçlar tablolardan çıkarılabilir.</li><li><b>Tablolar.</b> Tablolarda otomatik bir ad görünür; ad seçilemez ve değiştirilemez. Kohortunuzun ya da günün birincisi olursanız o günün en iyi çözümünüz gün kapandıktan sonra diğer oyunculara gösterilir.</li><li><b>Hizmetin değişmesi.</b> Oyunun kuralları, tahtaları, tabloları ve sunucusu önceden haber verilmeden değiştirilebilir ya da durdurulabilir. Tablo verileri kalıcı olarak saklanmayabilir.</li><li><b>Sorumluluk.</b> Oyun "olduğu gibi" sunulur. Yasaların izin verdiği ölçüde, oyunun kullanımından doğan dolaylı zararlardan sorumluluk kabul edilmez.</li><li><b>Fikri haklar.</b> Oyun, tahtaları ve görselleri Berkay Berat Sönmez'e aittir. Paylaşım menüsüyle paylaştığınız sonuç metinlerini dilediğiniz gibi kullanabilirsiniz.</li><li><b>Gizlilik.</b> Veriler <a href="fitil-privacy.html#tr">Gizlilik Politikası</a>'na göre işlenir.</li><li><b>İletişim.</b> <a href="mailto:contactbbslabs@gmail.com">contactbbslabs@gmail.com</a></li></ol>
+      <div class="contact">
+        <b>İletişim</b><br />
+        Berkay Berat Sönmez (BBS Labs)<br />
+        <a href="mailto:contactbbslabs@gmail.com">contactbbslabs@gmail.com</a>
+      </div>
+    </div>
+    </section>
+    <hr class="sep" />
+    <section id="en" lang="en">
+    <header class="top">
+      <img src="/fitil-icon-180.png" alt="FİTİL" width="56" height="56"
+           style="border-radius:13px;display:block;margin:0 auto 10px" />
+      <h1>Terms of Use</h1>
+      <div class="sub">Last updated: 1 October 2026</div>
+      <div class="lang"><a href="#tr">Türkçe</a></div>
+    </header>
+    <div class="card">
+      <ol><li><b>Service.</b> FUSE is a free puzzle game provided by Berkay Berat Sönmez (BBS Labs). The daily board and rankings require an internet connection; archive boards can be played offline.</li><li><b>Fair play.</b> On the daily board, score and time are computed on the server. Abusing the server, submitting with automated tools or trying to mislead the system is not allowed; such results may be removed from the rankings.</li><li><b>Rankings.</b> Rankings show an automatic name; it cannot be chosen or changed. If you are first in your group or first of the day, your best solution of that day is shown to other players after the day closes.</li><li><b>Changes to the service.</b> Rules, boards, rankings and the server may change or stop without prior notice. Ranking data may not be kept permanently.</li><li><b>Liability.</b> The game is provided "as is". To the extent permitted by law, no liability is accepted for indirect damages arising from its use.</li><li><b>Intellectual property.</b> The game, its boards and visuals belong to Berkay Berat Sönmez. You may use the result text you share through the share menu as you like.</li><li><b>Privacy.</b> Data is processed according to the <a href="fitil-privacy.html#en">Privacy Policy</a>.</li><li><b>Contact.</b> <a href="mailto:contactbbslabs@gmail.com">contactbbslabs@gmail.com</a></li></ol>
+      <div class="contact">
+        <b>Contact</b><br />
+        Berkay Berat Sönmez (BBS Labs)<br />
+        <a href="mailto:contactbbslabs@gmail.com">contactbbslabs@gmail.com</a>
+      </div>
+    </div>
+    </section>
+    <footer>
+      © 2026 Berkay Berat Sönmez (BBS Labs)
+      <span class="dot">·</span> <a href="fitil.html">FİTİL / FUSE</a>
+      <span class="dot">·</span> <a href="fitil-privacy.html">Gizlilik · Privacy</a>
+      <span class="dot">·</span> <a href="fitil-terms.html">Koşullar · Terms</a>
+    </footer>
+  </div>
+</body>
+</html>

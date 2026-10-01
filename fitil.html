@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FİTİL / FUSE — Günlük fitil bulmacası · Daily fuse puzzle</title>
+<meta name="description" content="FİTİL (FUSE): tahtaya fitil döşe, tek kıvılcımı çak, zincirin nereye kadar gittiğini izle. Herkes aynı günlük tahtayı oynar. Lay the fuses, strike one spark, watch the chain." />
+<link rel="icon" type="image/png" sizes="32x32" href="/fitil-icon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/fitil-icon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/fitil-icon-180.png" />
+<meta property="og:title" content="FİTİL / FUSE" />
+<meta property="og:description" content="Tahtaya fitil döşe, tek kıvılcımı çak. Lay the fuses, strike one spark." />
+<meta property="og:type" content="website" />
+<style>
+  :root {
+    --bg: #0c0c10; --card: #15151b; --ink: #e8e8ee; --muted: #9a9aa8; --line: #24242d;
+    --orange: #e0672e; --fuse: #a89544; --fuse-dim: #6a6144; --spark: #f7dc5c;
+    --barrel: #8e3b1c; --barrel-hi: #b04d25; --band: #45190c; --wall: #3b3f4a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink); background: var(--bg);
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 24px 20px 64px; }
+
+  /* fitil şeridi (marka öğesi): kıvılcım, fitil, varil */
+  .fuse { display: flex; gap: 6px; justify-content: center; align-items: center; margin: 8px 0 22px; }
+  .cell { width: 28px; height: 28px; border-radius: 6px; background: #1c1c24; position: relative; }
+  .cell.f::after { content: ""; position: absolute; left: 0; right: 0; top: 12px; height: 4px;
+    background: var(--fuse); border-radius: 2px; }
+  .cell.f.lit::after { background: var(--orange); box-shadow: 0 0 8px rgba(255,158,44,0.6); }
+  .cell.s::after { content: "✦"; position: absolute; inset: 0; display: flex; align-items: center;
+    justify-content: center; color: var(--spark); font-size: 18px; text-shadow: 0 0 8px rgba(247,220,92,0.7); }
+  .cell.w { background: var(--wall); }
+  .cell.b { background: linear-gradient(90deg, var(--barrel-hi) 0 30%, var(--barrel) 30%); border-radius: 9px; }
+  .cell.b::after { content: ""; position: absolute; left: 0; right: 0; top: 8px; height: 3px; background: var(--band);
+    box-shadow: 0 9px 0 var(--band); }
+
+  header.top { text-align: center; margin-bottom: 6px; }
+  header.top h1 { font-size: 1.9rem; letter-spacing: -0.5px; }
+  header.top .sub { color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
+  .lang { text-align: center; margin-top: 10px; font-size: 0.95rem; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 26px 28px; margin-top: 22px;
+  }
+  .card > h2:first-child { margin-top: 0; }
+  h2 { font-size: 1.2rem; margin: 22px 0 10px; padding-top: 4px; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 6px 0 14px 22px; }
+  li { margin-bottom: 7px; }
+  a { color: #f08a52; text-decoration: none; font-weight: 600; }
+  a:hover { text-decoration: underline; }
+  .intro { color: var(--muted); }
+  .table { overflow-x: auto; margin: 8px 0 14px; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.93rem; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 600; }
+  .contact { background: #1b1b22; border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .btn { display: inline-block; padding: 12px 20px; border-radius: 10px; font-weight: 700;
+    border: 1px solid var(--line); background: #1b1b22; color: var(--ink); }
+  .btn.mail { background: var(--orange); border-color: var(--orange); color: var(--bg); }
+  .store-note { margin-top: 14px; padding: 12px 16px; border-radius: 10px; background: #1b1b22;
+    border: 1px dashed #3a3a46; color: var(--muted); font-size: 0.95rem; }
+  .feat li { list-style: none; position: relative; padding-left: 4px; }
+  .feat { margin-left: 18px; }
+  .feat li::before { content: ""; position: absolute; left: -18px; top: 12px; width: 10px; height: 4px;
+    border-radius: 2px; background: var(--orange); }
+  hr.sep { border: 0; border-top: 1px solid var(--line); margin: 40px 0 8px; }
+  footer { text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 28px; }
+  footer a { color: var(--muted); }
+  .dot { margin: 0 8px; opacity: 0.5; }
+  @media (max-width: 480px){ .card { padding: 20px 18px; } header.top h1 { font-size: 1.6rem; } }
+  /* Dar ekranda tablo satırları alt alta: her hücre kendi başlığıyla. */
+  @media (max-width: 560px){
+    thead { display: none; }
+    table, tbody, tr, td { display: block; width: 100%; }
+    tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
+    td { border: 0; padding: 4px 0; }
+    td::before { content: attr(data-label); display: block; color: var(--muted); font-size: 0.82rem; font-weight: 600; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="fuse" aria-hidden="true">
+      <span class="cell s"></span><span class="cell f lit"></span><span class="cell f lit"></span>
+      <span class="cell f"></span><span class="cell f"></span><span class="cell b"></span>
+      <span class="cell w"></span><span class="cell b"></span>
+    </div>
+    <section id="tr" lang="tr">
+    <header class="top">
+      <img src="/fitil-icon-180.png" alt="FİTİL" width="72" height="72"
+           style="border-radius:16px;display:block;margin:0 auto 12px" />
+      <h1>FİTİL</h1>
+      <div class="sub">Tahtaya fitil döşe, tek kıvılcımı çak, zincirin nereye kadar gittiğini izle. Herkes aynı günlük tahtayı oynar.</div>
+      <div class="lang"><a href="#en">English</a></div>
+    </header>
+
+    <div class="card">
+      <h2>Özellikler</h2>
+      <ul class="feat">
+        <li><b>Günde bir tahta</b> — herkes aynı bulmacayı oynar; üç hak, tabloya en iyi koşun yazılır.</li>
+        <li><b>Kıyas</b> — kendi seviyendeki 50 kişilik kohortta sıran, bütün oyuncular içinde yüzdeliğin, 30 günlük genel tablo.</li>
+        <li><b>Tekrar izleme</b> — gün kapanınca birincinin çözümü ve mümkün olan en iyisi.</li>
+        <li><b>Arşiv</b> — kural kural öğreten dersler ve elle seçilmiş bulmacalar; çevrimdışı oynanır.</li>
+        <li><b>Hesap yok, reklam yok, satın alma yok</b> — analitik kütüphanesi de yok.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Destek ve iletişim</h2>
+      <p>Soru, öneri ya da bir hata mı? Uygulamada ana sayfa → Ayarlar → Geri bildirim gönder, ya da doğrudan yaz.</p>
+      <div class="btn-row">
+        <a class="btn mail" href="mailto:contactbbslabs@gmail.com">contactbbslabs@gmail.com</a>
+      </div>
+      <div class="store-note">📱 Google Play'de yakında; bağlantı yayına çıkınca burada.</div>
+    </div>
+
+    <div class="card">
+      <h2>Yasal</h2>
+      <div class="btn-row">
+        <a class="btn" href="fitil-privacy.html#tr">Gizlilik Politikası</a>
+        <a class="btn" href="fitil-terms.html#tr">Kullanım Koşulları</a>
+      </div>
+    </div>
+    </section>
+    <hr class="sep" />
+    <section id="en" lang="en">
+    <header class="top">
+      <img src="/fitil-icon-180.png" alt="FİTİL" width="72" height="72"
+           style="border-radius:16px;display:block;margin:0 auto 12px" />
+      <h1>FUSE</h1>
+      <div class="sub">Lay the fuses, strike one spark, watch how far the chain goes. Everyone plays the same daily board.</div>
+      <div class="lang"><a href="#tr">Türkçe</a></div>
+    </header>
+
+    <div class="card">
+      <h2>Features</h2>
+      <ul class="feat">
+        <li><b>One board a day</b> — everyone plays the same puzzle; three tries, your best run goes on the rankings.</li>
+        <li><b>Comparison</b> — your rank in a 50-player group at your level, your percentile among everyone, a 30-day overall ranking.</li>
+        <li><b>Replays</b> — after the day closes, see how the winner solved it and what the best possible was.</li>
+        <li><b>Archive</b> — lesson boards that teach one rule at a time and hand-picked puzzles; plays offline.</li>
+        <li><b>No account, no ads, no purchases</b> — and no analytics library.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Support &amp; Contact</h2>
+      <p>Questions, feedback, or a bug to report? In the app: home screen → Settings → Send feedback, or write to us directly.</p>
+      <div class="btn-row">
+        <a class="btn mail" href="mailto:contactbbslabs@gmail.com">contactbbslabs@gmail.com</a>
+      </div>
+      <div class="store-note">📱 Coming soon to Google Play — the link will appear here once the app is live.</div>
+    </div>
+
+    <div class="card">
+      <h2>Legal</h2>
+      <div class="btn-row">
+        <a class="btn" href="fitil-privacy.html#en">Privacy Policy</a>
+        <a class="btn" href="fitil-terms.html#en">Terms of Use</a>
+      </div>
+    </div>
+    </section>
+    <footer>
+      © 2026 Berkay Berat Sönmez (BBS Labs)
+      <span class="dot">·</span> <a href="fitil.html">FİTİL / FUSE</a>
+      <span class="dot">·</span> <a href="fitil-privacy.html">Gizlilik · Privacy</a>
+      <span class="dot">·</span> <a href="fitil-terms.html">Koşullar · Terms</a>
+    </footer>
+  </div>
+</body>
+</html>

@@ -142,6 +142,28 @@
       <li>Oyun verisi (skorlar, ayarlar, kayıtlı tur) <strong>yalnız cihazınızda</strong> durur.</li>
     </ul>
 
+    <h2>Avrupa'da onay (AB/EEA, Birleşik Krallık, İsviçre)</h2>
+    <p>
+      Bu bölgelerde ölçüm <strong>sorulmadan açılmaz</strong>. Uygulamayı
+      ilk açtığında, öğreticiden önce tek bir ekran çıkar ve anonim kullanım
+      verisi paylaşmak isteyip istemediğini sorar. İki seçenek eşit
+      ağırlıktadır, önceden işaretlenmiş bir seçim yoktur ve karar verene
+      kadar <strong>hiçbir olay ya da tanımlayıcı gönderilmez</strong>.
+    </p>
+    <p>
+      "Paylaşma" dersen Google Consent Mode'da <code>analytics_storage</code>
+      reddedilir ve ölçüm toplama kapalı kalır. Reklam sinyalleri
+      (<code>ad_storage</code>, <code>ad_user_data</code>,
+      <code>ad_personalization</code>) <strong>her durumda</strong>
+      reddedilir — uygulamada reklam yok.
+    </p>
+    <p>
+      Bölgeyi belirlerken <strong>ağ isteği yapılmaz</strong>: cihazın
+      SIM/şebeke ülkesi ve yerel ayarı okunur, bu bilgi cihazdan çıkmaz.
+      Hiçbiri okunamazsa onay istenir, yani belirsizlik hep sorma yönünde
+      çözülür.
+    </p>
+
     <h2>Kapatma</h2>
     <div class="note">
       Uygulama içinde <strong>Menü → Kullanım verisi</strong> anahtarını kapatın.
@@ -233,6 +255,28 @@
       <li>No access to contacts, location, camera, microphone or files.</li>
       <li>Game data (scores, settings, saved run) stays <strong>on your device only</strong>.</li>
     </ul>
+
+    <h2>Consent in Europe (EU/EEA, United Kingdom, Switzerland)</h2>
+    <p>
+      In these regions measurement is <strong>never enabled without
+      asking</strong>. The first time you open the app, before the tutorial,
+      a single screen asks whether you want to share anonymous usage data.
+      The two options carry equal weight, nothing is pre-selected, and until
+      you decide <strong>no event or identifier is sent at all</strong>.
+    </p>
+    <p>
+      If you choose not to share, <code>analytics_storage</code> is denied in
+      Google Consent Mode and collection stays off. Advertising signals
+      (<code>ad_storage</code>, <code>ad_user_data</code>,
+      <code>ad_personalization</code>) are denied <strong>in every
+      case</strong> — the app has no ads.
+    </p>
+    <p>
+      Determining the region involves <strong>no network request</strong>:
+      the device's SIM/network country and locale are read and that
+      information never leaves the device. If none can be read, consent is
+      requested — uncertainty always resolves towards asking.
+    </p>
 
     <h2>Turning it off</h2>
     <div class="note">

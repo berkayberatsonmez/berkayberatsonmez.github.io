@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gizlilik Politikası — Köprü Blok</title>
+<meta name="description" content="Köprü Blok mobil bulmaca oyununun gizlilik politikası: hangi anonim kullanım olayları toplanıyor, neler toplanmıyor ve ölçüm nasıl kapatılır. Privacy policy for the Bridge Blocks puzzle game." />
+<style>
+  :root {
+    --surface: #edf3fa; --card: #ffffff; --ink: #233651; --muted: #546a82;
+    --line: #d8e5f5; --accent: #4d8bd2; --board: #273c57;
+    --blue: #009bfa; --coral: #e46f87; --gold: #edc96b; --violet: #9b6bf2;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink); background: var(--surface);
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 28px 20px 64px; }
+
+  /* Oyunun kendi taşları: dekoratif şerit. */
+  .pieces { display: flex; gap: 8px; justify-content: center; margin: 6px 0 20px; }
+  .piece {
+    width: 30px; height: 30px; border-radius: 7px;
+    box-shadow: 0 3px 0 rgba(0,0,0,0.18);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .piece span { width: 11px; height: 11px; display: block; }
+  .piece.blue { background: var(--blue); }
+  .piece.blue span { border-radius: 50%; background: #004c7f; }
+  .piece.coral { background: var(--coral); }
+  .piece.coral span { background: transparent; border: 3px solid #7b2c3f; transform: rotate(45deg); }
+  .piece.gold { background: var(--gold); }
+  .piece.gold span { height: 4px; border-radius: 2px; background: #866f2f; }
+  .piece.violet { background: var(--violet); }
+  .piece.violet span { border-radius: 50%; border: 3px solid #472983; }
+
+  header.top { text-align: center; margin-bottom: 4px; }
+  header.top h1 { font-size: 1.9rem; letter-spacing: -0.5px; }
+  header.top .sub { color: var(--muted); font-size: 0.95rem; margin-top: 6px; }
+
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 26px 28px; margin-top: 22px; box-shadow: 0 8px 26px rgba(35,54,81,0.06);
+  }
+  h2 { font-size: 1.25rem; margin: 26px 0 10px; }
+  h2:first-child { margin-top: 0; }
+  h3 { font-size: 1.02rem; margin: 18px 0 8px; color: var(--muted); }
+  p { margin: 10px 0; }
+  ul { margin: 10px 0 10px 22px; }
+  li { margin: 5px 0; }
+  strong { color: var(--ink); }
+
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.93rem; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  td code {
+    background: var(--surface); border-radius: 5px; padding: 1px 6px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.88em;
+  }
+
+  .note {
+    background: var(--surface); border-left: 4px solid var(--accent);
+    border-radius: 0 10px 10px 0; padding: 14px 16px; margin: 16px 0;
+  }
+  .lang { text-align: center; margin: 26px 0 0; }
+  .lang a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .lang a:hover { text-decoration: underline; }
+  footer { text-align: center; color: var(--muted); font-size: 0.88rem; margin-top: 28px; }
+  footer a { color: var(--accent); }
+  hr.split { border: 0; border-top: 1px solid var(--line); margin: 36px 0 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="pieces" aria-hidden="true">
+    <div class="piece blue"><span></span></div>
+    <div class="piece coral"><span></span></div>
+    <div class="piece gold"><span></span></div>
+    <div class="piece violet"><span></span></div>
+  </div>
+
+  <header class="top">
+    <h1>Köprü Blok — Gizlilik Politikası</h1>
+    <div class="sub">Son güncelleme: 21 Ekim 2026 · <a href="#english">English below</a></div>
+  </header>
+
+  <section class="card" id="turkce">
+    <h2>Kısaca</h2>
+    <p>
+      Köprü Blok kişisel veri <strong>toplamaz</strong>. Hesap yok, giriş yok,
+      reklam yok. Oyun internet olmadan çalışır. Toplanan tek şey, uygulamayı
+      nasıl geliştireceğimizi anlamamıza yarayan <strong>anonim kullanım
+      olaylarıdır</strong> ve bunu uygulama içinden kapatabilirsiniz.
+    </p>
+
+    <h2>Topladıklarımız</h2>
+    <p>Yalnız anonim kullanım olayları (Google Firebase Analytics üzerinden):</p>
+    <table>
+      <thead><tr><th>Olay</th><th>Taşıdığı bilgi</th></tr></thead>
+      <tbody>
+        <tr><td><code>tutorial_start</code>, <code>tutorial_complete</code></td><td>—</td></tr>
+        <tr><td><code>tutorial_skip</code></td><td>öğreticinin kaçıncı adımında bırakıldığı</td></tr>
+        <tr><td><code>game_start</code></td><td>hangi açılış profili</td></tr>
+        <tr><td><code>game_end</code></td><td>yerleştirme sayısı, puan, köprü sayısı, en uzun seri, ulaşılan renk sayısı, geri alma kullanıldı mı</td></tr>
+        <tr><td><code>bridge</code></td><td>kaç yönde köprü, kaç hücre temizlendi</td></tr>
+        <tr><td><code>undo</code></td><td>ödüllü mü serbest mi</td></tr>
+        <tr><td><code>badge_unlock</code></td><td>rozet kimliği</td></tr>
+        <tr><td><code>new_record</code></td><td>yeni rekor puanı</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Bunların hepsi oyunun kendi sayılarıdır. Ad, e-posta, telefon numarası,
+      konum, rehber, fotoğraf, serbest metin ya da cihaz kimliği
+      <strong>toplanmaz</strong> ve gönderilen hiçbir olay sizi tanımlamaz.
+    </p>
+    <p>
+      Firebase Analytics, hizmetin işleyişi gereği kendi anonim uygulama örneği
+      kimliğini ve cihazın genel özelliklerini (model, işletim sistemi sürümü,
+      ülke) işler. Bu bilgiyi biz ayrıca toplamayız ve tek tek kullanıcıya
+      bağlamayız.
+    </p>
+
+    <h2>Toplamadıklarımız</h2>
+    <ul>
+      <li>Hesap, giriş, kullanıcı profili yok.</li>
+      <li>Reklam yok, reklam kimliği kullanılmıyor.</li>
+      <li>Uygulama içi satın alma yok.</li>
+      <li>Rehber, konum, kamera, mikrofon, dosya erişimi istenmez.</li>
+      <li>Oyun verisi (skorlar, ayarlar, kayıtlı tur) <strong>yalnız cihazınızda</strong> durur.</li>
+    </ul>
+
+    <h2>Kapatma</h2>
+    <div class="note">
+      Uygulama içinde <strong>Menü → Kullanım verisi</strong> anahtarını kapatın.
+      Kapalıyken hiçbir olay gönderilmez. Tercih cihazınızda saklanır.
+    </div>
+
+    <h2>Çocuklar</h2>
+    <p>
+      Uygulama çocuklara özel olarak yönlendirilmemiştir ve çocuklardan bilerek
+      veri toplamaz.
+    </p>
+
+    <h2>Veri saklama ve silme</h2>
+    <p>
+      Anonim olaylar Firebase'in varsayılan saklama süresine tabidir. Olaylar
+      sizi tanımlamadığı için tek tek silme talebi teknik olarak
+      karşılanamaz; uygulamayı kaldırmak cihazdaki tüm oyun verisini siler.
+    </p>
+
+    <h2>Değişiklikler</h2>
+    <p>
+      Bu politika değişirse bu sayfadaki tarih güncellenir ve önemli
+      değişiklikler uygulama içinde duyurulur.
+    </p>
+
+    <h2>İletişim</h2>
+    <p><a href="mailto:berkayberatsonmez@gmail.com">berkayberatsonmez@gmail.com</a></p>
+  </section>
+
+  <hr class="split" />
+
+  <header class="top" id="english" style="margin-top:32px">
+    <h1>Bridge Blocks — Privacy Policy</h1>
+    <div class="sub">Last updated: 21 October 2026</div>
+  </header>
+
+  <section class="card">
+    <h2>In short</h2>
+    <p>
+      Bridge Blocks does <strong>not</strong> collect personal data. There are
+      no accounts, no sign-in and no ads, and the game works offline. The only
+      thing collected is <strong>anonymous usage events</strong> that help us
+      understand how to improve the app, and you can turn them off inside the
+      app.
+    </p>
+
+    <h2>What we collect</h2>
+    <p>Anonymous usage events only, via Google Firebase Analytics:</p>
+    <table>
+      <thead><tr><th>Event</th><th>What it carries</th></tr></thead>
+      <tbody>
+        <tr><td><code>tutorial_start</code>, <code>tutorial_complete</code></td><td>—</td></tr>
+        <tr><td><code>tutorial_skip</code></td><td>which tutorial step it was left at</td></tr>
+        <tr><td><code>game_start</code></td><td>which starting profile</td></tr>
+        <tr><td><code>game_end</code></td><td>placements, score, bridges, longest combo, colours reached, whether undo was used</td></tr>
+        <tr><td><code>bridge</code></td><td>how many directions, how many cells cleared</td></tr>
+        <tr><td><code>undo</code></td><td>rewarded or free</td></tr>
+        <tr><td><code>badge_unlock</code></td><td>badge id</td></tr>
+        <tr><td><code>new_record</code></td><td>the new best score</td></tr>
+      </tbody>
+    </table>
+    <p>
+      These are all the game's own numbers. We do <strong>not</strong> collect
+      names, e-mail addresses, phone numbers, location, contacts, photos, free
+      text or device identifiers, and no event sent identifies you.
+    </p>
+    <p>
+      As part of its operation Firebase Analytics processes its own anonymous
+      app-instance identifier and general device characteristics (model, OS
+      version, country). We do not collect this separately and do not link it
+      to an individual user.
+    </p>
+
+    <h2>What we do not collect</h2>
+    <ul>
+      <li>No accounts, sign-in or user profiles.</li>
+      <li>No ads and no advertising identifier.</li>
+      <li>No in-app purchases.</li>
+      <li>No access to contacts, location, camera, microphone or files.</li>
+      <li>Game data (scores, settings, saved run) stays <strong>on your device only</strong>.</li>
+    </ul>
+
+    <h2>Turning it off</h2>
+    <div class="note">
+      In the app, turn off <strong>Menu → Usage data</strong>. While it is off,
+      no events are sent at all. The preference is stored on your device.
+    </div>
+
+    <h2>Children</h2>
+    <p>
+      The app is not directed at children and does not knowingly collect data
+      from them.
+    </p>
+
+    <h2>Retention and deletion</h2>
+    <p>
+      Anonymous events follow Firebase's default retention period. Because the
+      events do not identify you, individual deletion requests cannot be
+      fulfilled technically; uninstalling the app removes all game data from
+      your device.
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      If this policy changes, the date on this page is updated and significant
+      changes are announced inside the app.
+    </p>
+
+    <h2>Contact</h2>
+    <p><a href="mailto:berkayberatsonmez@gmail.com">berkayberatsonmez@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <a href="/">berkayberatsonmez.github.io</a>
+  </footer>
+</div>
+</body>
+</html>
